@@ -8,7 +8,6 @@
 
 <style>
 	.bg {
-		background-color: aqua;
 		width: 100%;
 		height: 100%;
 	}
