@@ -1,7 +1,11 @@
+$orangeColor: #F7712B;
+$disable: #3C454C;
+
 #sideBar {
     background-color: #EAEBED;
     height: 100%;
     width: 100%;
+    min-height: 720px;
     #top {
         display: flex;
         justify-content: center;
@@ -10,35 +14,121 @@
         width: 100%;
         height: 10%;
         #logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 5px;
-            background-color: #3C454C;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: #333a3f;
         }
         #top-border-bottom {
             border-bottom: 2px solid #3C454C;
-            padding: 10px 44px;
+            padding: 5px 44px;
         }
     }
     #menuBar {
+        // .menu-select {
+        //     width: 100%;
+        //     height: 100px;
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+        //     align-items: center;
+        //     #logoMenuList {
+        //         color: #3C454C;
+        //         font-size: 40px;
+        //         display: flex;
+        //         justify-content: center;
+        //         align-items: center;
+        //         width: 45px;
+        //         height: 45px;
+        //         border-radius: 5px;
+        //     }
+        //     #textMenuList {
+        //         display: flex;
+        //         align-items: center;
+        //         text-align-last: center;
+        //         font-size: 15px;
+        //     }
+        //     &:hover {
+        //         background-color:$orangeColor;
+        //         cursor: pointer;
+        //     }
+        // }
+        .menu-active {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            #boxLogoActive{
+                width: 110px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                #logoMenuListActive {
+                    color: $orangeColor;
+                    font-size: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 5px;
+                }
+                #textMenuListActive {
+                    color: $orangeColor;
+                    display: flex;
+                    align-items: center;
+                    text-align-last: center;
+                    font-size: 15px;
+                }
+            }
+            #activeLineActive {
+                background-color: $orangeColor;
+                width: 8px;
+                border-radius: 10px;
+            }
+        }
         .menu-select {
             width: 100%;
             height: 100px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            #logoMenuList {
-                background-color: #3C454C;
-                width: 45px;
-                height: 45px;
-                border-radius: 5px;
-            }
-            #textMenuList {
+            #boxLogo{
+                width: 110px;
                 display: flex;
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                text-align-last: center;
-                font-size: 15px;
+                #logoMenuList{
+                    color: $disable;
+                    font-size: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 5px;
+                }
+                #textMenuList {
+                    color: $disable;
+                    display: flex;
+                    align-items: center;
+                    text-align-last: center;
+                    font-size: 15px;
+                }
+            }
+            #activeLine{
+                display:none;
+                background-color: $orangeColor;
+                width: 8px;
+                border-radius: 10px;
+                
+            }
+            &:hover {
+                #activeLine {
+                    display: flex;
+                }
+                cursor: pointer;
+                background-color: #f7722b7e;
             }
         }
     }
