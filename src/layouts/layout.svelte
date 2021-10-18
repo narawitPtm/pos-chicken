@@ -1,9 +1,11 @@
 <script lang="ts">
+    import SideBar from '../sidebar/side-bar.svelte';
+    import Sidebar from '../sidebar/side-bar.svelte';
 </script>
 
 <div id="layout">
     <div id="sideBarBox">
-        <!-- sidebar -->
+        <SideBar/>
     </div>
     <div id="bodyBox">
         <div id="mainBox">
@@ -14,7 +16,7 @@
 
 <style lang="scss">
     #layout {
-    $side-width: 110px;
+    $side-width: 120px;
     display: flex;
     #sideBarBox {
         position: fixed;
