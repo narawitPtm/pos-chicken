@@ -1,0 +1,45 @@
+#sideBar {
+    background-color: #EAEBED;
+    height: 100%;
+    width: 100%;
+    #top {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        #logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            background-color: #3C454C;
+        }
+        #top-border-bottom {
+            border-bottom: 2px solid #3C454C;
+            padding: 10px 44px;
+        }
+    }
+    #menuBar {
+        .menu-select {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            #logoMenuList {
+                background-color: #3C454C;
+                width: 45px;
+                height: 45px;
+                border-radius: 5px;
+            }
+            #textMenuList {
+                display: flex;
+                align-items: center;
+                text-align-last: center;
+                font-size: 15px;
+            }
+        }
+    }
+}

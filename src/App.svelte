@@ -2,9 +2,11 @@
 	import Layout from './layouts/layout.svelte';
 </script>
 
-<div class="bg">
-	<Layout/>
-</div>
+<body>
+	<div class="bg">
+		<Layout/>
+	</div>
+</body>
 
 <style>
 	.bg {
