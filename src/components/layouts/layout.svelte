@@ -1,6 +1,12 @@
 <script lang="ts">
     import SideBar from '../sidebar/side-bar.svelte';
-    import Sidebar from '../sidebar/side-bar.svelte';
+    import SelectedOrder from '../seletected-order/seleted-order.svelte'    
+//     const routes = {
+//     '/': Home,
+//     '/product/:id': ProductDetails,
+//     '/login': isLogin ? Home : Login,
+//     '*': Home,
+//   }
 </script>
 
 <div id="layout">
@@ -9,7 +15,7 @@
     </div>
     <div id="bodyBox">
         <div id="mainBox">
-            <!-- body -->
+            <SelectedOrder/>
         </div>
     </div>
 </div>

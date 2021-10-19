@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { push } from 'svelte-spa-router'
 	
 	let menulists: {name:string, logo:string, isActive:boolean, path:string}[] = [
 		{ name: 'เมนู', logo: 'fas fa-book', isActive: true, path:""},
@@ -17,13 +18,12 @@
 			}
 		})
 		menulists = menulists
-		
 	}
 </script>
 
 <div id="sideBar">
     <div id="top">
-        <div id="logo"><i class="fas fa-drumstick-bite"></i></div>
+        <div id="logo" on:click={() => push('/')}><i class="fas fa-drumstick-bite" aria-hidden="true"></i></div>
 		<div id="top-border-bottom"></div>
     </div>
     <div id="menuBar">
@@ -31,15 +31,15 @@
 		{#if menulist.isActive}
 		<div class="menu-active">
 			<div id="boxLogoActive">
-				<div id="logoMenuListActive"><i class={menulist.logo}></i></div>
+				<div id="logoMenuListActive"><i class={menulist.logo} aria-hidden="true"></i></div>
 				<div id="textMenuListActive">{menulist.name}</div>
 			</div>
 			<div id="activeLineActive"></div>
 		</div>
 		{:else}
-		<div id="posMenuList" class="menu-select" on:click={()=>(goto(index))}>
+		<div id="posMenuList" class="menu-select" on:click={()=>(goto(index), push('/login'))}>
 			<div id="boxLogo">
-				<div id="logoMenuList"> <i class={menulist.logo}></i> </div>
+				<div id="logoMenuList"> <i class={menulist.logo} aria-hidden="true"></i> </div>
 				<div id="textMenuList">{menulist.name}</div>
 			</div>
 			<div id="activeLine"></div>
