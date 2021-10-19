@@ -1,7 +1,6 @@
 <script lang="ts">
     let src = '/picture/chicken.jpg';
-    
-  
+
 </script>
 <!-- <button> -->
 <div>
@@ -14,9 +13,12 @@
 
 <!-- picture -->
 <div id="nongKai">
-	<div class="card"><img class = "pchicken"{src} alt="">
+	<div class="card-menu">
+		<img class = "pchicken" src="{src}" alt="">
 		<div class="card-footer">
-			<div class="nongKaitidsapork"><label >น่องไก่ติดสะโพก</label></div>
+			<div class="nongKaitidsapork">
+				น่องไก่ติดสะโพก
+			</div>
 			<div class="Two">0</div>
 		</div>
 	</div>
