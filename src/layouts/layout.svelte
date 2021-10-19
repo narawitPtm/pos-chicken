@@ -1,4 +1,5 @@
 <script lang="ts">
+    import OrderStatus from '../components/oreder-status/orderStatus.svelte';
 </script>
 
 <div id="layout">
@@ -8,6 +9,7 @@
     <div id="bodyBox">
         <div id="mainBox">
             <!-- body -->
+            <OrderStatus/>
         </div>
     </div>
 </div>
