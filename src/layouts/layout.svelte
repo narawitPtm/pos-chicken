@@ -25,7 +25,7 @@
         height: 100vh;
     }
     #bodyBox {
-        width: 100%;
+        width: calc(100% - #{$side-width});
         height: 100%;
         margin-left: $side-width;
         #mainBox {

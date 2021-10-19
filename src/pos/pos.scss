@@ -63,138 +63,50 @@ border-radius: 5px;
     border-radius: 5px;
 }
 
-.pchicken1{
+#nongKai {
     margin-top: 100px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
+    .card{
+        background-color: #EAEBED ;
+        border-radius: 5px;
+        height: 160px;
+        width:  200px;
+        .pchicken{
+            width: 100%;
+            height: 120px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        } 
+        .card-footer{
+            display: flex;
+            height: 40px;
+
+            .nongKaitidsapork{
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+               
+                  
+            }
+        
+            .Two{
+                
+               
+                background-color: red;
+                color: white;
+        
+            }
+
+        }
+
+    }
+
+
+    
+     // margin-right: 500px;
+    display: grid;
+    grid-template-columns: auto ;
+    grid-gap: auto; 
+    
 }
 
-.pchicken2{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
 
-.pchicken3{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken4{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken5{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken6{
-    margin-top: 100px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken7{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken8{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken9{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken10{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken11{
-    margin-top: 100px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken12{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken13{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken14{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken15{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken16{
-    margin-top: 100px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.pchicken17{
-    margin-top: 100px;
-    margin-left: 15px;
-    border-radius: 5px;
-    height: 133px;
-    width:  210px;
-}
-
-.Nong{
-    margin-left: 10px ;
-}
