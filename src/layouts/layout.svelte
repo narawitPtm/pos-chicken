@@ -1,4 +1,5 @@
 <script lang="ts">
+     import  POS from '../pos/pos.svelte'
 </script>
 
 <div id="layout">
@@ -8,6 +9,7 @@
     <div id="bodyBox">
         <div id="mainBox">
             <!-- body -->
+            <POS/>
         </div>
     </div>
 </div>
