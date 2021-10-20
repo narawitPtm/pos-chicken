@@ -1,6 +1,14 @@
 <script lang="ts">
+import Router from 'svelte-spa-router';
+
     import  POS from '../pos/pos.svelte'
     import SideBar from '../sidebar/side-bar.svelte';
+    import Stock from '../stock/stock.svelte';
+    const routes = {
+    '/pos': POS,
+    '/stock': Stock,
+    '*': POS,
+}
 </script>
 
 <div id="layout">
@@ -10,7 +18,8 @@
     <div id="bodyBox">
         <div id="mainBox">
             <!-- body -->
-            <POS/>
+            <Router {routes}/>
+            <!-- body -->
         </div>
     </div>
 </div>
