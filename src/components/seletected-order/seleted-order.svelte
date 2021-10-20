@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { push } from 'svelte-spa-router'
    let orderlistsPrepare: {name:string, quantity:number, cost:number}[] = [
-		{ name: 'อกไก่', quantity:2, cost: 45},
+		{ name: 'อกไก่', quantity:1, cost: 45},
       { name: 'สะโพก', quantity:1, cost: 45},
       { name: 'สะโพกติดน่อง', quantity:2, cost: 45},
       { name: 'ข้าวเหนียว', quantity:2, cost: 45},
-      { name: 'หอมเจียว', quantity:2, cost: 45}
+      { name: 'หอมเจียว', quantity:2, cost: 45},
+      { name: 'หนังไก่', quantity:1, cost: 20},
+      { name: 'ปีกไก่', quantity:2, cost: 45},
+      { name: 'น่องไก่', quantity:2, cost: 45}
 	];
 </script>
 
@@ -17,14 +20,21 @@
    <!-- loop-order -->
    {#each orderlistsPrepare as orderlistPrepare}
       <div class="menuPrepare">
-         <i class="fas fa-times delete"></i>
-         <div class="menu-detail">
-            <div class="name-menu">
-               {orderlistPrepare.name}
+         <div class="menuPrepareLeft">
+            <i class="fas fa-times delete"></i>
+            <div class="menu-detail">
+               <div class="name-menu">
+                  {orderlistPrepare.name}
+               </div>
+               <div class="cost-menu">
+                  ฿ {orderlistPrepare.cost*orderlistPrepare.quantity}
+               </div>
             </div>
-            <div class="cost-menu">
-               ฿ {orderlistPrepare.cost*orderlistPrepare.quantity}
-            </div>
+         </div>
+         <div class="btn-volume">
+            <div class="minus-vol">-</div>
+            <div class="volume-num">{orderlistPrepare.quantity}</div>
+            <div class="plus-vol">+</div>
          </div>
       </div>
    {/each}
