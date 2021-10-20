@@ -12,7 +12,7 @@
 	];
 </script>
 
-<div id="main">
+<div id="ordering">
    <div id="headerOrder">
    รายการสั่งซื้อ
    </div>
@@ -39,6 +39,20 @@
       </div>
    {/each}
    <!-- loop-order -->
+   </div>
+   <div id="promotion">
+      <div id="text-promotion">โปรโมชั่น</div>
+      <div id="name-promotion">ส่วนลด</div>
+      <div id="cost-promotion"> ฿ 5 </div>
+   </div>
+   <div id="conclution-order">
+      <div id="cost-tap">
+         <div id="text-total">รวมราคาทั้งหมด</div>
+         <div id="number-total"> ฿ 125 </div>
+      </div>
+      <div id="btn-submit-order">
+         <label>ยืนยันการสั่งซื้อ</label>
+      </div>
    </div>
 </div>
 

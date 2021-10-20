@@ -1,5 +1,6 @@
 $orangeColor: #F7712B;
-#main {
+$senkobrang:2px solid rgba(251, 105, 38, 0.2);
+#ordering {
     position: fixed;
     top: 0px;
     right: 0px;
@@ -15,12 +16,12 @@ $orangeColor: #F7712B;
         align-items: center;
         font-weight: bold;
         font-size: 50px;
-        border-bottom: 2px solid rgba(251, 105, 38, 0.2);
+        border-bottom: $senkobrang;
     }
     #menuListPrepare {
-        height: 500px;
+        height: 550px;
         padding: 0px 40px 0px 30px;
-        border-bottom: 2px solid rgba(251, 105, 38, 0.2);
+        border-bottom: $senkobrang;
         overflow-y: auto;
         .menuPrepare {
             padding-top: 20px;
@@ -94,6 +95,42 @@ $orangeColor: #F7712B;
                     }
                 }
             }
+        }
+    }
+    #promotion {
+        display: flex;
+        align-items:center;
+        justify-content: space-around;
+        height: 60px;
+        font-size: 20px;
+        border-bottom: $senkobrang;
+    #text-promotion {}
+    #name-promotion {}
+    #costpromotion {}
+    }
+    #conclution-order {
+        display: flex;
+        flex-flow: column;
+        font-size: 20px;
+        height: 100%;
+        padding: 10px 20px 20px 20px;
+        #cost-tap {
+            padding-right: 60px;
+        display: flex;
+        justify-content: space-between;
+            #text-total {}
+            #number-total {}
+        }
+        #btn-submit-order {
+            border-radius: 5px;
+            height: 70px;
+            color: white;
+            font-size: 30px;
+            margin-top: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $orangeColor;
         }
     }
 }
