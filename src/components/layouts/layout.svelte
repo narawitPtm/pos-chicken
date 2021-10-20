@@ -1,13 +1,12 @@
 <script lang="ts">
 import Router from 'svelte-spa-router';
-
-    import  POS from '../pos/pos.svelte'
-    import SideBar from '../sidebar/side-bar.svelte';
-    import Stock from '../stock/stock.svelte';
-    const routes = {
-    '/pos': POS,
-    '/stock': Stock,
-    '*': POS,
+import  POS from '../pos/pos.svelte'
+import SideBar from '../sidebar/side-bar.svelte';
+import Stock from '../stock/stock.svelte';
+const routes = {
+'/pos': POS,
+'/stock': Stock,
+'*': POS,
 }
 </script>
 
@@ -25,7 +24,7 @@ import Router from 'svelte-spa-router';
 </div>
 
 <style lang="scss">
-    #layout {
+#layout {
     $side-width: 120px;
     display: flex;
     #sideBarBox {
@@ -42,5 +41,5 @@ import Router from 'svelte-spa-router';
         padding: 50px 40px;
         }
     }
-    }
+}
 </style>
