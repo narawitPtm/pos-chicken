@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SelectedOrder from '../seletected-order/seleted-order.svelte'    
     let src = '/picture/chicken.jpg';
 	let menuchicken: {name:string,isActive:boolean, path:string}[] = [
 		{ name: 'ทั้งหมด',  isActive: true, path:""},
@@ -40,6 +41,7 @@
 			<div class="Two">0</div>
 		</div>
 	</div>
+	<SelectedOrder/>
 </div>	
 
 <style lang="scss">

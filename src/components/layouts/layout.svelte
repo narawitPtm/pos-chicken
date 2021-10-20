@@ -1,13 +1,14 @@
 <script lang="ts">
+import Router from 'svelte-spa-router';
+
     import  POS from '../pos/pos.svelte'
     import SideBar from '../sidebar/side-bar.svelte';
-    import SelectedOrder from '../seletected-order/seleted-order.svelte'    
-//     const routes = {
-//     '/': Home,
-//     '/product/:id': ProductDetails,
-//     '/login': isLogin ? Home : Login,
-//     '*': Home,
-//   }
+    import Stock from '../stock/stock.svelte';
+    const routes = {
+    '/pos': POS,
+    '/stock': Stock,
+    '*': POS,
+}
 </script>
 
 <div id="layout">
@@ -16,9 +17,9 @@
     </div>
     <div id="bodyBox">
         <div id="mainBox">
-            <SelectedOrder/>
             <!-- body -->
-            <POS/>
+            <Router {routes}/>
+            <!-- body -->
         </div>
     </div>
 </div>

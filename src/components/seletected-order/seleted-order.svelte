@@ -51,7 +51,7 @@
          <div id="number-total"> ฿ 125 </div>
       </div>
       <div id="btn-submit-order">
-         <label>ยืนยันการสั่งซื้อ</label>
+         <div>ยืนยันการสั่งซื้อ</div>
       </div>
    </div>
 </div>
