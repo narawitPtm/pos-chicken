@@ -1,4 +1,5 @@
 <script lang="ts">
+    import  POS from '../pos/pos.svelte'
     import SideBar from '../sidebar/side-bar.svelte';
     import SelectedOrder from '../seletected-order/seleted-order.svelte'    
 //     const routes = {
@@ -16,6 +17,8 @@
     <div id="bodyBox">
         <div id="mainBox">
             <SelectedOrder/>
+            <!-- body -->
+            <POS/>
         </div>
     </div>
 </div>
@@ -30,7 +33,7 @@
         height: 100vh;
     }
     #bodyBox {
-        width: 100%;
+        width: calc(100% - #{$side-width});
         height: 100%;
         margin-left: $side-width;
         #mainBox {
