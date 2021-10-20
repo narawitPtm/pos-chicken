@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { push } from 'svelte-spa-router'
    let orderlistsPrepare: {name:string, quantity:number, cost:number}[] = [
 		{ name: 'อกไก่', quantity:1, cost: 45},
       { name: 'สะโพก', quantity:1, cost: 45},

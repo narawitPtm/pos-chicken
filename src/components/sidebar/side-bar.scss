@@ -3,7 +3,7 @@ $disable: #3C454C;
 
 #sideBar {
     background-color: #EAEBED;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     min-height: 720px;
     #top {
@@ -12,12 +12,12 @@ $disable: #3C454C;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: 10%;
+        height: 100px;
         #logo {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 50px;
+            font-size: 40px;
             color: #333a3f;
             &:hover {
                 cursor: pointer;
@@ -25,13 +25,13 @@ $disable: #3C454C;
         }
         #top-border-bottom {
             border-bottom: 2px solid $disable;
-            padding: 5px 44px;
+            padding: 10px 44px;
         }
     }
     #menuBar {
         .menu-active {
             width: 100%;
-            height: 100px;
+            height: 80px;
             display: flex;
             #boxLogoActive{
                 width: 110px;
@@ -41,7 +41,7 @@ $disable: #3C454C;
                 align-items: center;
                 #logoMenuListActive {
                     color: $orangeColor;
-                    font-size: 40px;
+                    font-size: 30px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -54,7 +54,7 @@ $disable: #3C454C;
                     display: flex;
                     align-items: center;
                     text-align-last: center;
-                    font-size: 15px;
+                    font-size: 12px;
                 }
             }
             #activeLineActive {
@@ -75,7 +75,7 @@ $disable: #3C454C;
                 align-items: center;
                 #logoMenuList{
                     color: $disable;
-                    font-size: 40px;
+                    font-size: 30px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -88,19 +88,18 @@ $disable: #3C454C;
                     display: flex;
                     align-items: center;
                     text-align-last: center;
-                    font-size: 15px;
+                    font-size: 12px;
                 }
             }
             #activeLine{
-                display:none;
-                background-color: $orangeColor;
-                width: 8px;
-                border-radius: 10px;
                 
+                background-color: #EAEBED;
+                width: 8px;
+                border-radius: 15px;
             }
             &:hover {
                 #activeLine {
-                    display: flex;
+                    background-color: $orangeColor;
                 }
                 cursor: pointer;
                 background-color: #f7722b63;

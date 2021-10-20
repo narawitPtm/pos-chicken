@@ -22,28 +22,29 @@
 	}
 
 </script>
+<div>
 	<main>
 		<div class="filter-btn-box">
 			{#each menuchicken as menu, index }	
-		  		<button class = {`filter-button ${menu.isActive ? 'active' : ''}`} on:click={() => submenu(index)}> {menu.name} </button>
+			<button class = {`filter-button ${menu.isActive ? 'active' : ''}`} on:click={() => submenu(index)}> {menu.name} </button>
 			{/each}
 		</div>
 	</main>
-
-<!-- picture -->
-<div id="nongKai">
-	<div class="card-menu">
-		<img class = "chicken-img" src="{src}" alt="">
-		<div class="card-footer">
-			<div class="chicken-text">
-				น่องไก่ติดสะโพก
+	<!-- picture -->
+	<div id="nongKai">
+		<div class="card-menu">
+			<img class = "chicken-img" src="{src}" alt="">
+			<div class="card-footer">
+				<div class="chicken-text">
+					น่องไก่ติดสะโพก
+				</div>
+				<div class="Two">0</div>
 			</div>
-			<div class="Two">0</div>
 		</div>
-	</div>
-	<SelectedOrder/>
-</div>	
+		<SelectedOrder/>
+	</div>	
+</div>
 
 <style lang="scss">
-   @import './pos.scss';
+@import './pos.scss';
 </style>
