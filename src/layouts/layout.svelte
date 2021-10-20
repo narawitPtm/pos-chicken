@@ -1,6 +1,6 @@
 <script lang="ts">
+    import  POS from '../pos/pos.svelte'
     import SideBar from '../sidebar/side-bar.svelte';
-    import Sidebar from '../sidebar/side-bar.svelte';
 </script>
 
 <div id="layout">
@@ -10,6 +10,7 @@
     <div id="bodyBox">
         <div id="mainBox">
             <!-- body -->
+            <POS/>
         </div>
     </div>
 </div>
@@ -24,7 +25,7 @@
         height: 100vh;
     }
     #bodyBox {
-        width: 100%;
+        width: calc(100% - #{$side-width});
         height: 100%;
         margin-left: $side-width;
         #mainBox {
