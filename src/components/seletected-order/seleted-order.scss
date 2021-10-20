@@ -1,0 +1,138 @@
+$orangeColor: #F7712B;
+$senkobrang:2px solid rgba(251, 105, 38, 0.2);
+#ordering {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: FFFEFE;
+    width: 450px;
+    height: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    #headerOrder {
+        padding-top: 20px;
+        height: 130px;
+        padding-left: 30px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 50px;
+        border-bottom: $senkobrang;
+    }
+    #menuListPrepare {
+        height: 550px;
+        padding: 0px 40px 20px 30px;
+        border-bottom: $senkobrang;
+        overflow-y: auto;
+        .menuPrepare {
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            .menuPrepareLeft {
+                display: flex;
+                .delete {
+                    color: $orangeColor;
+                    font-size: 25px;
+                    padding-top: 10px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                .menu-detail {
+                    padding-left: 25px;
+                    font-size: 20px;
+                    .name-menu {}
+                    .cost-mennu {}
+                }
+            }
+            .btn-volume {
+                display: flex;
+                align-items: center;
+                padding-right: 30px;
+                padding-bottom: 10px;
+                .minus-vol {
+                    background-color: $orangeColor;
+                    border: $orangeColor solid 1px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    color: white;
+                    font-size: 20px;
+                    width: 30px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    &:active {
+                        background-color: #f78649;
+                    }
+                }
+                .volume-num {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 50px;
+                    font-size: 20px;
+                    border-top: solid 1px #C4C4C4;
+                    border-bottom: solid 1px #C4C4C4;
+                }
+                .plus-vol {
+                    background-color: $orangeColor;
+                    border: $orangeColor solid 1px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    color: white;
+                    font-size: 20px;
+                    width: 30px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    &:active {
+                        background-color: #f78649;
+                    }
+                }
+            }
+        }
+    }
+    #promotion {
+        display: flex;
+        align-items:center;
+        justify-content: space-around;
+        height: 60px;
+        font-size: 20px;
+        border-bottom: $senkobrang;
+    #text-promotion {}
+    #name-promotion {}
+    #costpromotion {}
+    }
+    #conclution-order {
+        display: flex;
+        flex-flow: column;
+        font-size: 25px;
+        height: 100%;
+        padding: 10px 20px 20px 20px;
+        #cost-tap {
+        padding-right: 60px;
+        padding-left: 30px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+            #text-total {}
+            #number-total {}
+        }
+        #btn-submit-order {
+            border-radius: 5px;
+            height: 70px;
+            color: white;
+            font-size: 30px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $orangeColor;
+        }
+    }
+}

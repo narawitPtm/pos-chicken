@@ -1,6 +1,14 @@
 <script lang="ts">
     import OrderStatus from '../components/oreder-status/orderStatus.svelte';
     import SideBar from '../sidebar/side-bar.svelte';
+    import Router from 'svelte-spa-router';
+    import  POS from '../pos/pos.svelte'
+    import Stock from '../stock/stock.svelte';
+    const routes = {
+    '/pos': POS,
+    '/stock': Stock,
+    '*': POS,
+}
 </script>
 
 <div id="layout">
@@ -10,7 +18,8 @@
     <div id="bodyBox">
         <div id="mainBox">
             <!-- body -->
-            <OrderStatus/>
+            <Router {routes}/>
+            <!-- body -->
         </div>
     </div>
 </div>
@@ -25,7 +34,7 @@
         height: 100vh;
     }
     #bodyBox {
-        width: 100%;
+        width: calc(100% - #{$side-width});
         height: 100%;
         margin-left: $side-width;
         #mainBox {
