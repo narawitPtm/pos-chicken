@@ -1,0 +1,102 @@
+#orderStatus {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    #topic {
+        height: 55px;
+        margin: 0;
+        border-bottom: 2.5px solid #FFA14A;
+        margin-bottom: 50px;
+        .topic-text {
+            font-size: 36px;
+            font-weight: bold;
+        }
+    }
+    #order {
+        display: grid;
+        grid-template-columns: 295px 295px 295px 295px;
+        grid-gap: 20px;
+        .order-card {
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            height: 334px;
+            width: 290px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            margin-bottom: 10px;
+            .details {
+                display: block;
+                box-sizing: border-box;
+                height: 85%;
+                padding: 0;
+                margin: 10px 15px 0 15px;
+                .no-text {
+                    height: 15%;
+                    font-size: 28px;
+                    font-weight: bold;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    border-bottom: 1px solid black;
+                    margin-top: 2px;
+                }
+                .menu-scrollbar {
+                    height: 80%;
+                    overflow-y: scroll;
+                    margin-top: 5px;
+                    padding: 0 10px 0 10px;
+                    .menu-item {
+                        display: flex;
+                        box-sizing: border-box;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        flex-wrap: wrap;
+                        height: 10%;
+                        .menu {
+                            width: 70%;
+                            font-size: 18px;
+                            font-weight: normal;
+                            text-align: start;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        .price {
+                            font-size: 18px;
+                            width: 30%;
+                            font-weight: normal;
+                            text-align: end;
+                            padding: 0;
+                            margin: 0;
+                        }           
+                    }
+                }
+                .menu-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                .menu-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none; 
+                }
+            }
+            .bottom {
+                display: block;
+                box-sizing: border-box;
+                height: 15%;
+                padding: 0;
+                .status-button {
+                    margin: 0;
+                    background-color: #1BB145;
+                    font-size: 24px;
+                    font-weight: normal;
+                    color: white;
+                    width: 100%;
+                    border-radius: 0 0 10px 10px;;
+                }
+            }
+            
+        }   
+    }
+}
+
