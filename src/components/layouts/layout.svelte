@@ -40,7 +40,7 @@
         margin-left: $side-width;
         #mainBox {
         height: 100%;
-        padding: 50px 40px;
+        padding: 50px 0 0 0;
         }
     }
 }
