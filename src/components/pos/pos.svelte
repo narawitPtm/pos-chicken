@@ -42,7 +42,9 @@
 </script>
 <div id="posMain">
 		<div class="filter-btn-box">
-			<!-- btn -->
+			{#each typeChicken as typeKen, index  }
+				<button class={`btn-box ${typeKen.isActive ? 'active' : '' }`}  on:click={()=>submenu(index)}>{typeKen.name}</button>
+			{/each}
 		</div>
 	<!-- picture -->
 	<!-- <div id="nongkaiBox">
