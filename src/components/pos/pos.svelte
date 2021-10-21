@@ -42,12 +42,10 @@
 </script>
 <div id="posMain">
 		<div class="filter-btn-box">
-			{#each typeChicken as menu, index }	
-			<button class = {`filter-button ${menu.isActive ? 'active' : ''}`} on:click={() => submenu(index)}> {menu.name} </button>
-			{/each}
+			<!-- btn -->
 		</div>
 	<!-- picture -->
-	<div id="nongkaiBox">
+	<!-- <div id="nongkaiBox">
 		<div id="nongKai">
 			{#each menuChickens as menuChicken}		
 			<div class="card-menu">
@@ -62,7 +60,7 @@
 			{/each}
 		</div>
 	</div>
-	<SelectedOrder/>
+	<SelectedOrder/> -->
 </div>
 
 <style lang="scss">
