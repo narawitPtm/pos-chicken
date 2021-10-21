@@ -19,7 +19,7 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
         border-bottom: $senkobrang;
     }
     #menuListPrepare {
-        height: 430px;
+        height: calc(100vh - 350px);
         padding: 0px 20px 10px 15px;
         border-bottom: $senkobrang;
         overflow-y: auto;
