@@ -5,22 +5,22 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
     top: 0px;
     right: 0px;
     background-color: FFFEFE;
-    width: 450px;
-    height: 100%;
+    width: 350px;
+    height: 100vh;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     #headerOrder {
         padding-top: 20px;
-        height: 130px;
-        padding-left: 30px;
+        height: 80px;
+        padding-left: 20px;
         display: flex;
         align-items: center;
         font-weight: bold;
-        font-size: 50px;
+        font-size: 30px;
         border-bottom: $senkobrang;
     }
     #menuListPrepare {
-        height: 550px;
-        padding: 0px 40px 20px 30px;
+        height: calc(100vh - 350px);
+        padding: 0px 20px 10px 15px;
         border-bottom: $senkobrang;
         overflow-y: auto;
         .menuPrepare {
@@ -31,7 +31,7 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
                 display: flex;
                 .delete {
                     color: $orangeColor;
-                    font-size: 25px;
+                    font-size: 20px;
                     padding-top: 10px;
                     &:hover {
                         cursor: pointer;
@@ -39,7 +39,7 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
                 }
                 .menu-detail {
                     padding-left: 25px;
-                    font-size: 20px;
+                    font-size: 15px;
                     .name-menu {}
                     .cost-mennu {}
                 }
@@ -58,8 +58,8 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
                     border-top-left-radius: 5px;
                     border-bottom-left-radius: 5px;
                     color: white;
-                    font-size: 20px;
-                    width: 30px;
+                    font-size: 15px;
+                    width: 20px;
                     &:hover {
                         cursor: pointer;
                     }
@@ -71,8 +71,8 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    width: 50px;
-                    font-size: 20px;
+                    width: 40px;
+                    font-size: 15px;
                     border-top: solid 1px #C4C4C4;
                     border-bottom: solid 1px #C4C4C4;
                 }
@@ -85,8 +85,8 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
                     border-top-right-radius: 5px;
                     border-bottom-right-radius: 5px;
                     color: white;
-                    font-size: 20px;
-                    width: 30px;
+                    font-size: 15px;
+                    width: 20px;
                     &:hover {
                         cursor: pointer;
                     }
@@ -102,7 +102,7 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
         align-items:center;
         justify-content: space-around;
         height: 60px;
-        font-size: 20px;
+        font-size: 15px;
         border-bottom: $senkobrang;
     #text-promotion {}
     #name-promotion {}
@@ -111,7 +111,7 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
     #conclution-order {
         display: flex;
         flex-flow: column;
-        font-size: 25px;
+        font-size: 20px;
         height: 100%;
         padding: 10px 20px 20px 20px;
         #cost-tap {
@@ -125,10 +125,10 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
         }
         #btn-submit-order {
             border-radius: 5px;
-            height: 70px;
+            height: 50px;
             color: white;
-            font-size: 30px;
-            margin-top: 40px;
+            font-size: 20px;
+            margin-top: 50px;
             display: flex;
             align-items: center;
             justify-content: center;

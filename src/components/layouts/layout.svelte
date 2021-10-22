@@ -7,8 +7,13 @@
     const routes = {
     '/pos': POS,
     '/stock': Stock,
+<<<<<<< HEAD
     '/order': OrderStatus, 
     '*': POS
+=======
+    '/order': OrderStatus,
+    '*': POS,
+>>>>>>> origin/main
 }
 </script>
 
@@ -26,8 +31,8 @@
 </div>
 
 <style lang="scss">
-    #layout {
-    $side-width: 120px;
+#layout {
+    $side-width: 100px;
     display: flex;
     #sideBarBox {
         position: fixed;
@@ -40,8 +45,10 @@
         margin-left: $side-width;
         #mainBox {
         height: 100%;
-        padding: 50px 40px;
+        padding: 50px 0 0 0;
         }
     }
-    }
+}
+
+
 </style>

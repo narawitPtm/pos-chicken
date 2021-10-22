@@ -9,6 +9,34 @@
       { name: 'ปีกไก่', quantity:2, cost: 45},
       { name: 'น่องไก่', quantity:2, cost: 45}
 	];
+
+   type order = {
+      id: number,
+      name: string
+   }
+
+   type menuLists = {
+      id: number,
+      menu: string,
+      orders: order[]
+   }
+
+   let orderLists: menuLists[] = [
+      {
+         id: 1, 
+         menu: 'ไก่ทอด1',
+         orders: [
+            {
+               id: 1,
+               name: 'ไบโอ'
+            },
+            {
+               id: 1,
+               name: 'ไบโอ'
+            }
+         ]
+      }
+   ]
 </script>
 
 <div id="ordering">
