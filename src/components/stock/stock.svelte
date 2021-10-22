@@ -1,4 +1,6 @@
 <script lang="ts">
+import { text } from "svelte/internal";
+
     type stockType = {
         stockId: number;
         stockName: string;
@@ -36,6 +38,7 @@
     </script>
     
     <div id="table" class="table-box">
+        <div id="heaDer"><div class="header-text">สินค้าคงคลัง</div></div>
         <table id="customTable">
             <thead id="customHeader" class="header-table">
                 <tr class="row-header-box">
