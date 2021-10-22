@@ -2,12 +2,14 @@
     height: 100%;
     width: 100%;
     padding: 0;
-    margin-left: 50px;
+    margin-left: 100px;
     #topic {
         height: 55px;
         margin: 0;
         border-bottom: 2.5px solid #FFA14A;
         margin-bottom: 50px;
+        margin-top: 0;
+        width: 86.5%;
         .topic-text {
             font-size: 36px;
             font-weight: bold;
@@ -17,6 +19,7 @@
         display: grid;
         grid-template-columns: 295px 295px 295px 295px;
         grid-gap: 20px;
+        margin-bottom: 50px;
         .order-card {
             display: flex;
             box-sizing: border-box;

@@ -7,13 +7,8 @@
     const routes = {
     '/pos': POS,
     '/stock': Stock,
-<<<<<<< HEAD
-    '/order': OrderStatus, 
-    '*': POS
-=======
     '/order': OrderStatus,
     '*': POS,
->>>>>>> origin/main
 }
 </script>
 
