@@ -47,7 +47,7 @@
 			{/each}
 		</div>
 	<!-- picture -->
-	<!-- <div id="nongkaiBox">
+	<div id="nongkaiBox">
 		<div id="nongKai">
 			{#each menuChickens as menuChicken}		
 			<div class="card-menu">
@@ -62,7 +62,7 @@
 			{/each}
 		</div>
 	</div>
-	<SelectedOrder/> -->
+	<SelectedOrder/>
 </div>
 
 <style lang="scss">

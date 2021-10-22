@@ -27,47 +27,47 @@
     }
 }
 
-// #nongkaiBox {
-//   overflow-y: overlay;
-//   height: calc( 100vh - 160px);
-//   padding-bottom: 30px;
-//   width: calc(100% - 350px);
-//   #nongKai {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fill, minmax(180px, 210px));
-//     grid-gap: 15px;
-//     justify-content: center;
-//     overflow-y: auto;
-//     .card-menu {
-//       background-color: #eaebed;
-//       border-radius: 5px;
-//       width: 200px;
-//       .chicken-img {
-//         width: 100%;
-//         height: 120px;
-//         border-top-left-radius: 5px;
-//         display: block;
-//         border-top-right-radius: 5px;
-//       }
-//       .card-footer {
-//         display: flex;
-//         .chicken-text {
-//           display: flex;
-//           align-items: center;
-//           padding-left: 10px;
-//           width: 160px;
-//         }
-//         .Two {
-//           border-bottom-right-radius: 5px;
-//           display: flex;
-//           justify-content: center;
-//           align-items: center;
-//           height: 40px;
-//           width: 40px;
-//           background-color: red;
-//           color: white;
-//         }
-//       }
-//     }
-//   }
-// }
+#nongkaiBox {
+  overflow-y: overlay;
+  height: calc( 100vh - 160px);
+  padding-bottom: 30px;
+  width: calc(100% - 350px);
+  #nongKai {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 210px));
+    grid-gap: 15px;
+    justify-content: center;
+    overflow-y: auto;
+    .card-menu {
+      background-color: #eaebed;
+      border-radius: 5px;
+      width: 200px;
+      .chicken-img {
+        width: 100%;
+        height: 120px;
+        border-top-left-radius: 5px;
+        display: block;
+        border-top-right-radius: 5px;
+      }
+      .card-footer {
+        display: flex;
+        .chicken-text {
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          width: 160px;
+        }
+        .Two {
+          border-bottom-right-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 40px;
+          width: 40px;
+          background-color: red;
+          color: white;
+        }
+      }
+    }
+  }
+}
