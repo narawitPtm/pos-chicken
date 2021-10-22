@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin-left: 50px;
     #topic {
         height: 55px;
         margin: 0;
@@ -30,12 +30,12 @@
             .details {
                 display: block;
                 box-sizing: border-box;
-                height: 85%;
+                height: 83%;
                 padding: 0;
                 margin: 10px 15px 0 15px;
                 .no-text {
-                    height: 15%;
-                    font-size: 28px;
+                    height: 13%;
+                    font-size: 24px;
                     font-weight: bold;
                     padding-left: 10px;
                     padding-right: 10px;
@@ -85,18 +85,45 @@
                 box-sizing: border-box;
                 height: 15%;
                 padding: 0;
-                .status-button {
-                    margin: 0;
+                .status-select {
                     background-color: #1BB145;
-                    font-size: 24px;
+                    font-size: 22px;
                     font-weight: normal;
+                    text-align: center;
                     color: white;
                     width: 100%;
-                    border-radius: 0 0 10px 10px;;
+                    height: 100%;
+                    border-radius: 0 0 10px 10px;
+                    &.yellow {
+                        background-color: #FFA14A;
+                    }
+                    &.red {
+                        background-color: #E30303;
+                    }
+                    &.green {
+                        background-color: #1BB145;
+                    }
+                    .option {
+                        font-size: 22px;
+                        font-weight: normal;
+                        text-align: center;
+                        &.yellow {
+                            background-color: #FFA14A;
+                        }
+                        &.red {
+                            background-color: #E30303;
+                        }
+                        &.green {
+                            background-color: #1BB145;
+                        }
+                        &:hover {
+                            box-shadow: 0 0 10px 100px #fff inset;
+                        }
+                    }
                 }
-            }
             
-        }   
+            }   
+        }
     }
 }
 

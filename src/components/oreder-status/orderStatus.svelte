@@ -1,4 +1,255 @@
 <script lang="ts">
+    import Select from 'svelte-select';
+    import { onMount } from 'svelte';
+
+    type menuList = {
+        name: string;
+        quantity: number;
+    };
+
+    type statusList = {
+        id: number;
+        name: string;
+    };
+
+    type orderList = {
+        no: number;
+        menuList: menuList[];
+        status: number;
+    };
+
+    let orders: orderList[] = [
+        {
+            no: 1,
+            menuList: [
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+            ],
+            status: 2,
+        },
+        {
+            no: 2,
+            menuList: [
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+            ],
+            status: 2,
+        },
+        {
+            no: 3,
+            menuList: [
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+            ],
+            status: 2,
+        },
+        {
+            no: 4,
+            menuList: [
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+            ],
+            status: 1,
+        },
+        {
+            no: 5,
+            menuList: [
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+            ],
+            status: 1,
+        },
+        {
+            no: 6,
+            menuList: [
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+            ],
+            status: 1,
+        },
+        {
+            no: 7,
+            menuList: [
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+                {
+                    name: "ไก่ทอด",
+                    quantity: 5,
+                },
+            ],
+            status: 3,
+        },
+    ];
+
+    let selectedId;
+    let statusLabal = [
+        { id: 1, text: "รอ" },
+        { id: 2, text: "กำลังทำ" },
+        { id: 3, text: "ทำเสร็จแล้ว" }
+    ];
+
+    function changeStatus(index, value) {
+        console.log(index);
+        console.log(value);
+        // let list = [...orders];
+        // list[index].status = select.id;
+        // orders = list;
+    }
+
+    onMount( () => {
+        
+    })
+
 </script>
 
 <div id="orderStatus">
@@ -6,216 +257,36 @@
         <p class="topic-text">ออเดอร์ที่เปิดอยู่</p>
     </div>
     <div id="order">
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
+        {#each orders as order, index}
+            <div class="order-card">
+                <div class="details">
+                    <div class="no-text"># {order.no}</div>
+                    <div class="menu-scrollbar">
+                        {#each order.menuList as menu}
+                            <div class="menu-item">
+                                <p class="menu">{menu.name}</p>
+                                <p class="price">{menu.quantity}</p>
+                            </div>
+                        {/each}
                     </div>
                 </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
+                <div class="bottom">
+                    <select
+                        name="status"
+                        id="status"
+                        class={`status-select ${order.status === 1 ? "yellow" : order.status === 2 ? "red" : order.status === 3 ? "green" : "" }`}>
+                        {#each statusLabal as id}
+                            <option
+                                selected = {id.id === order.status}
+                                class={`option ${id.id === 1 ? "yellow" : id.id === 2 ? "red" : id.id === 3 ? "green" : "" }`}
+                                value={id}>
+                                {id.text}
+                            </option>
+                        {/each}
+                    </select>
                 </div>
             </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
-        <div class="order-card">
-            <div class="details">
-                <div class="no-text"># 1</div>
-                <div class="menu-scrollbar">
-                    <div class="menu-item">
-                        <p class="menu">น่องติดสะโพก</p>
-                        <p class="price">1234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom">
-                <button class="status-button">ส่งสำเร็จ</button>
-            </div>
-        </div>
+        {/each}
     </div>
 </div>
 

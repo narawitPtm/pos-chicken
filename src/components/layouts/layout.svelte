@@ -1,5 +1,5 @@
 <script lang="ts">
-    import OrderStatus from '../components/oreder-status/orderStatus.svelte';
+    import OrderStatus from '../oreder-status/orderStatus.svelte';
     import SideBar from '../sidebar/side-bar.svelte';
     import Router from 'svelte-spa-router';
     import  POS from '../pos/pos.svelte'
@@ -7,7 +7,8 @@
     const routes = {
     '/pos': POS,
     '/stock': Stock,
-    '*': POS,
+    '/order': OrderStatus, 
+    '*': POS
 }
 </script>
 
