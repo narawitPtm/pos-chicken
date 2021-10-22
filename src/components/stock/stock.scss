@@ -1,9 +1,17 @@
 .table-box {
     position: relative;
     margin-top: 20px;
-    margin-left: 15%;
+    margin-left: 10%;
+    #heaDer {
+        border-bottom: 2px solid #F7712B;
+        margin-bottom: 50px;
+        .header-text {
+            font-size: 36px;
+        }
+    }
     table {
-        min-width: 80%;
+        min-width: 90%;
+        height: 140px;
         border-collapse: separate;
         border-spacing: 0;
         .header-table {

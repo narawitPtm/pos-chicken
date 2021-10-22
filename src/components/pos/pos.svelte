@@ -67,8 +67,8 @@
 </script>
 <div id="posMain">
 		<div class="filter-btn-box">
-			{#each typeChicken as menu, index }	
-			<button class = {`filter-button ${menu.isActive ? 'active' : ''}`} on:click={() => submenu(index)}> {menu.name} </button>
+			{#each typeChicken as typeKen, index  }
+				<button class={`btn-box ${typeKen.isActive ? 'active' : '' }`}  on:click={()=>submenu(index)}>{typeKen.name}</button>
 			{/each}
 		</div>
 	<!-- picture -->
