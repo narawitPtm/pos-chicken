@@ -1,0 +1,126 @@
+#report {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin-left: 100px;
+    #topic {
+        height: 55px;
+        margin: 0;
+        border-bottom: 2.5px solid #FFA14A;
+        margin-bottom: 50px;
+        margin-top: 0;
+        width: 86.5%;
+        .topic-text {
+            font-size: 36px;
+            font-weight: bold;
+        }
+    }
+    #detail {
+        width: 86.5%;
+        #duration {
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+            justify-content: start;
+            align-items: center;
+            padding: 0;
+            margin-bottom: 20px;
+            .duration-div {
+                display: block;
+                box-sizing: border-box;
+                width: 20%;
+                font-size: 26px;
+                font-weight: bold;
+                margin: 0;
+                padding: 0;
+            }
+            .select {
+                display: block;
+                box-sizing: border-box;
+                width: 20%;
+                font-size: 24px;
+                font-weight: normal;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        #total {
+            .total-div {
+                display: flex;
+                flex-direction: row;
+                box-sizing: border-box;
+                justify-content: start;
+                padding: 0;
+                margin-bottom: 10px;
+                .total-text {
+                    display: block;
+                    box-sizing: border-box;
+                    width: 20%;
+                    font-size: 26px;
+                    font-weight: bold;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+        #report-menu {
+            margin-left: 60px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            padding: 0;
+            .menu {
+                display: flex;
+                flex-direction: row;
+                box-sizing: border-box;
+                justify-content: start;
+                padding: 0;
+                margin: 0;
+                .name {
+                    display: block;
+                    box-sizing: border-box;
+                    width: 30%;
+                    font-size: 22px;
+                    font-weight: normal;
+                    padding: 0;
+                    margin: 0;
+                }
+                .quantity {
+                    display: block;
+                    box-sizing: border-box;
+                    width: 10%;
+                    font-size: 22px;
+                    font-weight: normal;
+                    padding: 0;
+                    margin: 0;
+                }
+                .piece {
+                    display: block;
+                    box-sizing: border-box;
+                    width: 10%;
+                    font-size: 22px;
+                    font-weight: normal;
+                    padding: 0;
+                    margin: 0;
+                }
+                .price {
+                    display: block;
+                    box-sizing: border-box;
+                    width: 10%;
+                    font-size: 22px;
+                    font-weight: normal;
+                    padding: 0;
+                    margin: 0;
+                }
+                .bath {
+                    display: block;
+                    box-sizing: border-box;
+                    width: 10%;
+                    font-size: 22px;
+                    font-weight: normal;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

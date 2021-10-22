@@ -4,7 +4,7 @@
 		{ name: 'เมนู', logo: 'fas fa-book', isActive: true, path:"/pos"},
 		{ name: 'ออเดอร์ที่เปิดอยู่', logo: 'fas fa-envelope-open-text', isActive: false, path:"/order" },
 		{ name: 'สินค้าคงคลัง', logo: 'fas fa-cubes', isActive: false, path:"/stock" },
-		{ name: 'รายงาน', logo: 'fas fa-file-alt', isActive: false, path:"" }
+		{ name: 'รายงาน', logo: 'fas fa-file-alt', isActive: false, path:"/report" }
 	];
 
 	function goto(index: number) {

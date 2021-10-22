@@ -1,0 +1,190 @@
+<script lang="ts">
+    import Select from "svelte-select";
+
+    let total: { menu: string; quantity: number; price: number }[] = [
+        {
+            menu: "น่องติดสะโพก",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "อกไก่",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "ปิ้กไก่ทอด",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "หมูสามชั้นทอด",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "น่องไก่",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "หอมเจียว",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "หนังติดมัน",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "ข้าวเหนียวดำ",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "ไก่ทั้งตัว",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "หอมเจียวใหญ่",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "ชุดสุดคุ้ม",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "ชุดจุใจใช่เลย",
+            quantity: 1210,
+            price: 54450,
+        },{
+            menu: "ชุดครอบครัวสุขสันต์",
+            quantity: 1210,
+            price: 54450,
+        },
+    ];
+
+    let items: { value: number; label: string }[] = [
+        { value: 1, label: "วัน" },
+        { value: 2, label: "สัปดาห์" },
+        { value: 3, label: "เดือน" },
+        { value: 4, label: "ปี" },
+    ];
+
+    let value = { value: 1, label: "วัน" };
+</script>
+
+<div id="report">
+    <div id="topic">
+        <p class="topic-text">รายงานสรุปยอดขาย</p>
+    </div>
+    <div id="detail">
+        <div id="duration">
+            <div class="duration-div">
+                <p class="text">รายงานประจำ</p>
+            </div>
+            <div class="select">
+                <Select {items} {value} on:select={() => {}} />
+            </div>
+        </div>
+        <div id="total">
+            <div class="total-div">
+                <p class="total-text">ยอดขายรวม</p>
+                <p class="total-text">1,200,000</p>
+                <p class="total-text">บาท</p>
+            </div>
+            <div class="total-div">
+                <p class="total-text">กำไรรวม</p>
+                <p class="total-text">1,200,000</p>
+                <p class="total-text">บาท</p>
+            </div>
+        </div>
+        <div id="report-menu">
+            {#each total as item}
+            <div class="menu">
+                <p class="name">{item.menu}</p>
+                <p class="quantity">{item.quantity}</p>
+                <p class="piece">ชิ้น</p>
+                <p class="price">{item.price}</p>
+                <p class="bath">บาท</p>
+            </div>
+            {/each}
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    @import "./report.scss";
+    :root {
+    --border: 3px solid #FFA14A;
+    --borderHoverColor: #b2b8bf;
+    --borderFocusColor: #FFA14A;
+    --borderRadius: 20px;
+    --height: 52px;
+    --padding: 0 20px;
+    --background: #fff;
+    --inputColor: #3F4F5F;
+    --inputFontSize: 14px;
+    --inputLetterSpacing: -0.08px;
+    --placeholderColor: #78848F;
+    --disabledBackground: #EBEDEF;
+    --disabledBorderColor: #EBEDEF;
+    --disabledColor: #C1C6CC;
+    --disabledPlaceholderColor: #C1C6CC;
+    --selectedItemPadding: 0 20px 0 0;
+    --clearSelectRight: 10px;
+    --clearSelectTop: 11px;
+    --clearSelectBottom: 11px;
+    --clearSelectWidth: 20px;
+    --clearSelectColor: #c5cacf;
+    --clearSelectHoverColor: #FFA14A;
+    --clearSelectFocusColor: #3F4F5F;
+    --indicatorRight: 10px;
+    --indicatorTop: 11px;
+    --indicatorWidth: 20px;
+    --indicatorHeight: 20px;
+    --indicatorColor: #c5cacf;
+    --indicatorFill: currentcolor;
+    --indicatorStroke: currentcolor;
+    --spinnerRight: 10px;
+    --spinnerLeft: 11px;
+    --spinnerWidth: 20px;
+    --spinnerHeight: 20px;
+    --spinnerColor: #51ce6c;
+    --spinnerAnimation: rotate 0.75s linear infinite;
+    --multiSelectPadding: 0 35px 0 16px;
+    --multiSelectInputPadding: 0;
+    --multiSelectInputMargin: 0;
+    --errorBorder: 1px solid #FF2D55;
+    --listShadow: 0 2px 3px 0 rgba(44, 62, 80, 0.24);
+    --listBorderRadius: 4px;
+    --listMaxHeight: 250px;
+    --listBackground: #fff;
+    --virtualListHeight: 200px;
+    --groupTitleColor: #8f8f8f;
+    --groupTitleFontSize: 12px;
+    --groupTitlePadding: 0 20px;
+    --groupTitleTextTransform: uppercase;
+    --listEmptyTextAlign: center;
+    --listEmptyPadding: 20px 0;
+    --listEmptyColor: #78848F;
+    --itemPadding: 0 20px;
+    --itemActiveBg: #b9daff;
+    --itemIsActiveBG: #FFA14A;
+    --itemIsActiveColor: #fff;
+    --itemFirstBorderRadius: 4px 4px 0 0;
+    --itemHoverBG: #e7f2ff;
+    --multiItemBG: #EBEDEF;
+    --multiItemMargin: 5px 5px 0 0;
+    --multiItemBorderRadius: 16px;
+    --multiItemHeight: 32px;
+    --multiItemPadding: 0 10px 0 15px;
+    --multiLabelMargin: 0 5px 0 0;
+    --multiItemActiveBG: #006FFF;
+    --multiItemActiveColor: #fff;
+    --multiItemDisabledHoverBg: #EBEDEF;
+    --multiItemDisabledHoverColor: #C1C6CC;
+    --multiClearRadius: 50%;
+    --multiClearBG: 50%;
+    --multiClearWidth: #52616F;
+    --multiClearHeight: 16px;
+    --multiClearTop: 8px;
+    --multiClearTextAlign: center;
+    --multiClearPadding: 1px;
+    --multiClearHoverBG: #fff;
+    --multiClearHoverFill: #006FFF;
+    --multiClearFill: #EBEDEF;}
+</style>

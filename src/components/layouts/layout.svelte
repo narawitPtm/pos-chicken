@@ -4,10 +4,12 @@
     import Router from 'svelte-spa-router';
     import  POS from '../pos/pos.svelte'
     import Stock from '../stock/stock.svelte';
+    import Report from '../report/report.svelte';
     const routes = {
     '/pos': POS,
     '/stock': Stock,
     '/order': OrderStatus,
+    '/report': Report,
     '*': POS,
 }
 </script>
