@@ -1,72 +1,58 @@
 .table-box {
   position: relative;
-  margin-top: 20px;
-  margin-left: 10%;
-  #heaDer {
-    border-bottom: 2px solid #F7712B;
+  margin-left: 100px;
+  #header {
     margin-bottom: 50px;
+    width: 91.5%;
     .header-text {
       font-size: 36px;
+      font-weight: bold;
+      padding-top: 1px;
+      border-bottom: 2.5px solid #FFA14A;
     }
   }
   .custom-table {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     background-color: #F7712B;
-    width: max-content;
+    width: 91.5%;
     table {
       border-spacing: 0;
+      width: 100%;
       .header-table {
         .row-header-box {
           .column-header-box {
             height: 51px;
             border-right: 1px solid #FFF;
-            .topic-column {
-              &.no {
-                width: 87px;
-              }
-              &.name {
-                width: 337px;
-              }
-              &.priceUnit {
-                width: 127px;
-              }
-              justify-content: center;
-              color: #FFF;
-              width: 107px;
+            color: #FFF;
+            width: 10%;
+            &:nth-child(1) {
+              width: 5%;
             }
-            &:last-child {
+            &:nth-child(2) {
+              width: 40%;
+            }
+            &:nth-child(7) {
               border: none;
-              width: 98px;
             }
           }
         }
       }
     }
   }
-  .data-table::-webkit-scrollbar-track {
-    border-radius: 5px;
-  }
-  .data-table::-webkit-scrollbar {
-    width: 8px;
-  }
-  .data-table::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: #505050;
-  }
   .data-table {
     display: block;
-    width: 993px;
-    height: 200px;
+    width: 91.15%;
+    max-height: 650px;
     border-right: 3px solid #F7712B;
     border-left: 3px solid #F7712B;
     border-bottom: 3px solid #F7712B;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    table {
+    overflow-y: overlay;
+    #bodyTable {
       border-spacing: 0px;
+      width: 100%;
       .body-table {
         background-color: #FFF;
         .row-data-column {
@@ -74,17 +60,17 @@
             border-right: 1px solid #F7712B;
             border-bottom: 1px solid #F7712B;
             text-align: center;
-            .data {
-              &.stockId {
-                width: 84px;
-              }
-              &.stockName {
-                width: 337px;
-              }
-              &.stockUnitPrice {
-                width: 127px;
-              }
-              width: 107px;
+            height: 45px;
+            width: 10%;
+            &:nth-child(1) {
+              width: 4.85%;
+            }
+            &:nth-child(2) {
+              width: 40%;
+            }
+            &:last-child {
+              width: 9.85%;
+              border-right: none;
             }
           }
         }
