@@ -40,8 +40,8 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
                 .menu-detail {
                     padding-left: 25px;
                     font-size: 15px;
-                    .name-menu {}
-                    .cost-mennu {}
+                    // .name-menu {}
+                    // .cost-mennu {}
                 }
             }
             .btn-volume {
@@ -104,9 +104,9 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
         height: 60px;
         font-size: 15px;
         border-bottom: $senkobrang;
-    #text-promotion {}
-    #name-promotion {}
-    #costpromotion {}
+    // #text-promotion {}
+    // #name-promotion {}
+    // #costpromotion {}
     }
     #conclution-order {
         display: flex;
@@ -120,8 +120,8 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
         font-weight: bold;
         display: flex;
         justify-content: space-between;
-            #text-total {}
-            #number-total {}
+            // #text-total {}
+            // #number-total {}
         }
         #btn-submit-order {
             border-radius: 5px;

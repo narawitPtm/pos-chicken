@@ -5,6 +5,8 @@
     import  POS from '../pos/pos.svelte'
     import Stock from '../stock/stock.svelte';
     import Report from '../report/report.svelte';
+import { onMount } from 'svelte';
+
     const routes = {
     '/pos': POS,
     '/stock': Stock,
@@ -14,7 +16,7 @@
 }
 </script>
 
-<div id="layout">
+<div id="layout" >
     <div id="sideBarBox">
         <SideBar/>
     </div>
@@ -46,6 +48,5 @@
         }
     }
 }
-
 
 </style>
