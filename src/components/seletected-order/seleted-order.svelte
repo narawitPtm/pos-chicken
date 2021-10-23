@@ -1,18 +1,18 @@
 <script lang="ts">
   let orderlistsPrepare: { name: string; quantity: number; cost: number }[] = [
     { name: "อกไก่", quantity: 1, cost: 45 },
-  ];
+  ]
 
   type order = {
     id: number;
     name: string;
-  };
+  }
 
   type menuLists = {
     id: number;
     menu: string;
     orders: order[];
-  };
+  }
 
   export let menuChickens: {
     id: number;
@@ -21,7 +21,7 @@
     img: string;
     type: number;
     price: number;
-  }[];
+  }[]
 
   export let TotalCost: number =  0
 
