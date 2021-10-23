@@ -1,111 +1,58 @@
 <script lang="ts">
-  import { onMount } from "svelte";
 
   type stockType = {
-    stockId: number;
-    stockName: string;
-    stockTotal: number;
-    stockUnitPrice: number;
-    totalStockPrice: number;
-    pointToBuy: number;
-    additionalUnit: string;
-  };
+    stockId: number
+    stockName: string
+    stockTotal: number
+    stockUnitPrice: number
+    totalStockPrice: number
+    pointToBuy: number
+    additionalUnit: string
+  }
 
-  var listStock: stockType[] = [
+  let listStock: stockType[] = [
     {
       stockId: 1,
-      stockName: "ไก่ทั้งตัว",
+      stockName: 'ไก่ทั้งตัว',
       stockTotal: 5,
       stockUnitPrice: 70,
       totalStockPrice: 350,
       pointToBuy: 10,
-      additionalUnit: "ซื้อ",
+      additionalUnit: 'ซื้อ',
     },
     {
       stockId: 2,
-      stockName: "น่องไก่",
+      stockName: 'น่องไก่',
       stockTotal: 25,
       stockUnitPrice: 40,
       totalStockPrice: 1000,
       pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
+      additionalUnit: 'ไม่ซื้อ',
     },
     {
       stockId: 2,
-      stockName: "น่องไก่",
+      stockName: 'น่องไก่',
       stockTotal: 25,
       stockUnitPrice: 40,
       totalStockPrice: 1000,
       pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
+      additionalUnit: 'ไม่ซื้อ',
     },
     {
       stockId: 2,
-      stockName: "น่องไก่",
+      stockName: 'น่องไก่',
       stockTotal: 25,
       stockUnitPrice: 40,
       totalStockPrice: 1000,
       pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
-    },
-    {
-      stockId: 2,
-      stockName: "น่องไก่",
-      stockTotal: 25,
-      stockUnitPrice: 40,
-      totalStockPrice: 1000,
-      pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
-    },
-    {
-      stockId: 2,
-      stockName: "น่องไก่",
-      stockTotal: 25,
-      stockUnitPrice: 40,
-      totalStockPrice: 1000,
-      pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
-    },
-    {
-      stockId: 2,
-      stockName: "น่องไก่",
-      stockTotal: 25,
-      stockUnitPrice: 40,
-      totalStockPrice: 1000,
-      pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
-    },
-    {
-      stockId: 2,
-      stockName: "น่องไก่",
-      stockTotal: 25,
-      stockUnitPrice: 40,
-      totalStockPrice: 1000,
-      pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
-    },
-    {
-      stockId: 2,
-      stockName: "น่องไก่",
-      stockTotal: 25,
-      stockUnitPrice: 40,
-      totalStockPrice: 1000,
-      pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
+      additionalUnit: 'ไม่ซื้อ',
     }
-  ];
+  ]
 
-  onMount(async () => {
-    let tbodyHeight = document.getElementById("dataBody").offsetHeight;
-    let DataColumn = document.getElementsByClassName("data-column") as HTMLCollectionOf<HTMLElement>;
-    if (tbodyHeight < 200)
-      for (let index = 0; index < DataColumn.length; index++)
-        DataColumn[index].style.borderBottom = "1px solid #F7712B";
-  });
 </script>
 
 <div id="table" class="table-box">
-  <div id="heaDer"><div class="header-text">สินค้าคงคลัง</div></div>
+  <div id="header"><p class="header-text">สินค้าคงคลัง</p></div>
   <div class="custom-table">
     <table>
       <thead class="header-table">
@@ -136,7 +83,7 @@
     </table>
   </div>
   <div class="data-table">
-    <table>
+    <table id="bodyTable">
       <tbody id="dataBody" class="body-table">
         {#each listStock as row}
           <tr class="row-data-column">
