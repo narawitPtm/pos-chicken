@@ -1,67 +1,100 @@
 .table-box {
-    position: relative;
-    margin-top: 20px;
-    margin-left: 10%;
-    #heaDer {
-        border-bottom: 2px solid #F7712B;
-        margin-bottom: 50px;
-        .header-text {
-            font-size: 36px;
-        }
+  position: relative;
+  margin-top: 20px;
+  margin-left: 10%;
+  #heaDer {
+    border-bottom: 2px solid #F7712B;
+    margin-bottom: 50px;
+    .header-text {
+      font-size: 36px;
     }
+  }
+  .custom-table {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #F7712B;
+    width: max-content;
     table {
-        min-width: 90%;
-        height: 140px;
-        border-collapse: separate;
-        border-spacing: 0;
-        .header-table {
-            .row-header-box {
-                .column-header-box {
-                    border-right: 1px solid white;
-                    height: 51px;
-                    background-color: #F7712B;
-                    .topic-column {
-                        display: flex;
-                        justify-content: center;
-                        color: white;
-                    }
-                }
-                .column-header-box:first-child {
-                    border-top-left-radius: 5px;
-                }
-                .column-header-box:last-child {
-                    border-right: none;
-                    border-top-right-radius: 5px;
-                }
+      border-spacing: 0;
+      .header-table {
+        .row-header-box {
+          .column-header-box {
+            height: 51px;
+            border-right: 1px solid #FFF;
+            .topic-column {
+              &.no {
+                width: 87px;
+              }
+              &.name {
+                width: 337px;
+              }
+              &.priceUnit {
+                width: 127px;
+              }
+              justify-content: center;
+              color: #FFF;
+              width: 107px;
             }
+            &:last-child {
+              border: none;
+              width: 98px;
+            }
+          }
         }
-        .body-table {
-            width: 100%;
-            .row-data-column {
-                .data-column {
-                    border-right: 1px solid #F7712B;
-                    border-bottom: 1px solid #F7712B;
-                    text-align: center;
-                }
-                .data-column:first-child {
-                    border-left:3px solid #F7712B;
-                }
-                .data-column:last-child {
-                    border-right:3px solid #F7712B;
-                }
-            }
-            .row-data-column:hover {
-                background-color: #f7722b63;
-            }
-            .row-data-column:last-child td {
-                border-bottom:3px solid #F7712B;
-            }
-            .row-data-column:last-child td:first-child {
-                border-bottom-left-radius: 5px;
-            }
-            .row-data-column:last-child td:last-child {
-                border-bottom-right-radius: 5px;
-            }
-        }
+      }
     }
+  }
+  .data-table::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+  .data-table::-webkit-scrollbar {
+    width: 8px;
+  }
+  .data-table::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #505050;
+  }
+  .data-table {
+    display: block;
+    width: 993px;
+    height: 200px;
+    border-right: 3px solid #F7712B;
+    border-left: 3px solid #F7712B;
+    border-bottom: 3px solid #F7712B;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    table {
+      border-spacing: 0px;
+      .body-table {
+        background-color: #FFF;
+        .row-data-column {
+          .data-column {
+            border-right: 1px solid #F7712B;
+            border-bottom: 1px solid #F7712B;
+            text-align: center;
+            .data {
+              &.stockId {
+                width: 84px;
+              }
+              &.stockName {
+                width: 337px;
+              }
+              &.stockUnitPrice {
+                width: 127px;
+              }
+              width: 107px;
+            }
+          }
+        }
+        .row-data-column:last-child td {
+          border-bottom: none;
+        }
+        .row-data-column:hover {
+          background-color: #F7722B63;
+        }
+      }
+    }
+  }
 }
