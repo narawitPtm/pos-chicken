@@ -1,0 +1,40 @@
+<script lang="ts">
+</script>
+
+<div id="calculate-card">
+    <div id="topic">
+        <p class="topic-text">คำนวณราคาสินค้า</p>
+    </div>
+    <div id="detail">
+        <div class="detail-item">
+            <p class="label">รวมราคาทั้งหมด</p>
+            <p class="price">125</p>
+            <p class="bath">บาท</p>
+        </div>
+        <div class="detail-item">
+            <p class="label">สินค้าจำนวน</p>
+            <p class="price">8</p>
+            <p class="bath">ชิ้น</p>
+        </div>
+        <div class="detail-item">
+            <p class="label">รับมา</p>
+            <div class="price-input">
+                <input class="input" type="number" placeholder=""/>
+            </div>
+            <p class="bath">บาท</p>
+        </div>
+        <hr style="margin: 10px 0 10px 0;">
+        <div class="detail-item">
+            <p class="label">เงินทอน</p>
+            <p class="price">0.00</p>
+            <p class="bath">บาท</p>
+        </div>
+    </div>
+    <div id="bottom">
+        <button class="cash-button">ชำระเงิน</button>
+    </div>
+</div>
+
+<style lang="scss">
+    @import "./calculate.scss";
+</style>
