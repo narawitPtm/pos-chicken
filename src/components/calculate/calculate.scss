@@ -1,0 +1,108 @@
+#calculate-card {
+    background-color: white;
+    height: 450px;
+    width: 600px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    padding: 0;
+    margin: 0;
+    #topic {
+        height: 60px;
+        background-color: #F7712B;
+        border-radius: 20px 20px 0 0;
+        text-align: center;
+        margin: 0;
+        padding-top: 10px;
+        .topic-text {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    #detail {
+        height: 220px;
+        margin: 0;
+        padding: 30px;
+        .detail-item {
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+            justify-content: start;
+            align-items: center;
+            padding: 0;
+            margin-bottom: 15px;
+            .label {
+                width: 30%;
+                box-sizing: border-box;
+                text-align: end;
+                font-size: 24px;
+                font-weight: normal;
+                padding: 0;
+                margin: 0;
+            }
+            .price {
+                width: 50%;
+                box-sizing: border-box;
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+            }
+            .price-input {
+                width: 50%;
+                box-sizing: border-box;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                .input {
+                    text-align: center;
+                    width: 190px;
+                    padding-left: 20px;
+                    font-size: 24px;
+                    font-weight: bold;
+                    border-radius: 10px;
+                    background-color: #F6D5C4;
+                    margin: 0;
+                }
+            }
+            .bath {
+                width: 20%;
+                box-sizing: border-box;
+                text-align: start;
+                font-size: 24px;
+                font-weight: normal;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+    #bottom {
+        height: 80px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        .cash-button {
+            background-color: #F7712B;
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+            border-radius: 15px;
+            width: 350px;
+            height: 50px;
+            padding: 0;
+            margin-top: 20px;
+            transition: 0.6s;
+            &:hover {
+                cursor: pointer;
+                background-color: #3C454C;
+                color: #F7712B;
+            }
+            &:active {
+                transform: scale(0.97);
+            }
+        }
+    }
+}
