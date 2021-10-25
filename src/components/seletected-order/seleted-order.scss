@@ -133,6 +133,30 @@ $senkobrang:2px solid rgba(251, 105, 38, 0.2);
             align-items: center;
             justify-content: center;
             background-color: $orangeColor;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.288);
+    width: 100%;
+    height: 100%;
+    #box-modal {
+        position: fixed;
+    }
+    #dummy {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    }

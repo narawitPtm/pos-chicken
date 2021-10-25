@@ -1,7 +1,10 @@
 <script lang="ts">
+  	import Calculate from '../calculate/calculate.svelte'
   let orderlistsPrepare: { name: string; quantity: number; cost: number }[] = [
     { name: "อกไก่", quantity: 1, cost: 45 },
   ]
+
+  let modalShow:boolean = false
 
   type order = {
     id: number;
@@ -60,9 +63,28 @@
     menuChickens = menuChickens
     TotalCost = TotalCost
   }
+  
+  function showModal() {
+    modalShow = true
+    modalShow = modalShow  
+  }
+
+  function closeModal() {
+    modalShow = false
+    modalShow = modalShow  
+  }
 </script>
 
 <div id="ordering">
+  {#if modalShow === true}
+  <div id="modal" >
+    <div id="box-modal">
+      <Calculate TotalCost={TotalCost}/>
+    </div>
+    <div id="dummy" on:click={closeModal}>
+    </div>
+  </div>
+  {/if}
   <div id="headerOrder">รายการสั่งซื้อ</div>
   <div id="menuListPrepare">
     <!-- loop-order -->
@@ -99,8 +121,8 @@
     <div id="cost-tap">
       <div id="text-total">รวมราคาทั้งหมด</div>
       <div id="number-total">฿ {TotalCost}</div>
-    </div>
-    <div id="btn-submit-order">
+    </div>   
+    <div id="btn-submit-order" on:click={showModal}>
       <div>ยืนยันการสั่งซื้อ</div>
     </div>
   </div>

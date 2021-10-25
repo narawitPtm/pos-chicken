@@ -1,4 +1,5 @@
 <script lang="ts">
+    export let TotalCost: number
 </script>
 
 <div id="calculate-card">
@@ -8,7 +9,7 @@
     <div id="detail">
         <div class="detail-item">
             <p class="label">รวมราคาทั้งหมด</p>
-            <p class="price">125</p>
+            <p class="price">{TotalCost}</p>
             <p class="bath">บาท</p>
         </div>
         <div class="detail-item">

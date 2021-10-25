@@ -25,21 +25,7 @@
 		{id: 13, name: 'หอมเจียวใหญ่', quantity: 0, img: '/picture/chicken13.jpg', type: 4, price: 20},
 		{id: 14, name: 'ชุดสุดคุ้ม', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 150},
 		{id: 15, name: 'ชุดจุใจใช่เลย', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 165},
-		{id: 16, name: 'ชุดครอบครัวสุขสันต์', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 125},
-		{id: 10, name: 'ข้าวเหนียวดำ', quantity: 0, img: '/picture/chicken10.jpg', type: 3, price: 10},
-		{id: 11, name: 'ข้าวเหนียวขาว', quantity: 0, img: '/picture/chicken11.jpg', type: 3, price: 10},
-		{id: 12, name: 'ไก่ทั้งตัว', quantity: 0, img: '/picture/chicken12.jpg', type: 2, price: 200},
-		{id: 13, name: 'หอมเจียวใหญ่', quantity: 0, img: '/picture/chicken13.jpg', type: 4, price: 20},
-		{id: 14, name: 'ชุดสุดคุ้ม', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 150},
-		{id: 15, name: 'ชุดจุใจใช่เลย', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 165},
-		{id: 16, name: 'ชุดครอบครัวสุขสันต์', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 125},	
-		{id: 10, name: 'ข้าวเหนียวดำ', quantity: 0, img: '/picture/chicken10.jpg', type: 3, price: 10},
-		{id: 11, name: 'ข้าวเหนียวขาว', quantity: 0, img: '/picture/chicken11.jpg', type: 3, price: 10},
-		{id: 12, name: 'ไก่ทั้งตัว', quantity: 0, img: '/picture/chicken12.jpg', type: 2, price: 200},
-		{id: 13, name: 'หอมเจียวใหญ่', quantity: 0, img: '/picture/chicken13.jpg', type: 4, price: 20},
-		{id: 14, name: 'ชุดสุดคุ้ม', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 150},
-		{id: 15, name: 'ชุดจุใจใช่เลย', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 165},
-		{id: 16, name: 'ชุดครอบครัวสุขสันต์', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 125},		
+		{id: 16, name: 'ชุดครอบครัวสุขสันต์', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 125}	
 	]
 
   let TotalCost: number
@@ -76,6 +62,7 @@
 		})
 		menuChickens = menuChickens
 	}
+
 
 </script>
 <div id="posMain">
@@ -114,8 +101,9 @@
 			{/if}
 		</div>
 	</div>
-	<SelectedOrder bind:menuChickens bind:TotalCost/>
+	<SelectedOrder bind:menuChickens bind:TotalCost />
 </div>
+
 
 <style lang="scss">
 @import './pos.scss';
