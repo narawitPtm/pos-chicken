@@ -1,5 +1,10 @@
 <script lang="ts">
 	import SelectedOrder from '../seletected-order/seleted-order.svelte'    
+	import { onMount } from 'svelte'
+	import { get, post } from '../store/apipos';
+	// import  PostModel from '../../Model/PostModel';
+	import type GetModel from '../../Model/GetModel'
+	// import PostModelResponse from '../../Model/PostModelResponse';
 
 	let typeChicken: {name:string, isActive:boolean, path:string}[] = [
 		{ name: 'ทั้งหมด',  isActive: true, path:""},
@@ -62,6 +67,30 @@
 		})
 		menuChickens = menuChickens
 	}
+	onMount(async() => {
+		getStock()
+
+	}) 
+	let menuPos: GetModel= {}
+	async function getStock(): Promise<void> {
+		try {
+			menuPos = await get('/stock')
+			console.log(menuPos)
+			
+		} catch (error) {
+			console.error(error)
+		}
+	}
+	// async function postOrder(): Promise<void> {
+	// 	try {
+	// 		// const newRequest: PostModel = postOrder()
+	// 		const reponseOrder: PostModelResponse = await post('/Order/buy')
+	// 		console.log(reponseOrder)
+			
+	// 	} catch (error) {
+	// 		console.error(error)
+	// 	}
+	// }
 
 
 </script>
