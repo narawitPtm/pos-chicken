@@ -1,9 +1,8 @@
 <script lang="ts">
-    import Select from 'svelte-select';
-    import { onMount } from 'svelte';
+    import Select from "svelte-select";
+    import { onMount } from "svelte";
+    import Loading from "../loading/loading.svelte";
 
-
-    
     type menuList = {
         name: string;
         quantity: number;
@@ -237,60 +236,77 @@
     let statusLabal = [
         { id: 1, text: "รอ" },
         { id: 2, text: "กำลังทำ" },
-        { id: 3, text: "ทำเสร็จแล้ว" }
+        { id: 3, text: "ทำเสร็จแล้ว" },
     ];
 
-    function changeStatus(index, value) {
-        console.log(index);
-        console.log(value);
-        // let list = [...orders];
-        // list[index].status = select.id;
-        // orders = list;
-    }
-
-    onMount( () => {
-        
-    })
-
+    let loading: boolean = true;
+    onMount(async () => {
+        setTimeout(() => {
+            console.log("delayed!");
+            loading = false;
+        }, 1000);
+    });
 </script>
 
-<div id="orderStatus">
-    <div id="topic">
-        <p class="topic-text">ออเดอร์ที่เปิดอยู่</p>
-    </div>
-    <div id="order">
-        {#each orders as order, index}
-            <div class="order-card">
-                <div class="details">
-                    <div class="no-text"># {order.no}</div>
-                    <div class="menu-scrollbar">
-                        {#each order.menuList as menu}
-                            <div class="menu-item">
-                                <p class="menu">{menu.name}</p>
-                                <p class="price">{menu.quantity}</p>
-                            </div>
-                        {/each}
+{#if loading}
+    <Loading />
+{:else}
+    <div id="orderStatus">
+        <div id="topic">
+            <p class="topic-text">ออเดอร์ที่เปิดอยู่</p>
+        </div>
+        <div id="order">
+            {#each orders as order, index}
+                <div class="order-card">
+                    <div class="details">
+                        <div class="no-text"># {order.no}</div>
+                        <div class="menu-scrollbar">
+                            {#each order.menuList as menu}
+                                <div class="menu-item">
+                                    <p class="menu">{menu.name}</p>
+                                    <p class="price">{menu.quantity}</p>
+                                </div>
+                            {/each}
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <select
+                            name="status"
+                            id="status"
+                            class={`status-select ${
+                                order.status === 1
+                                    ? "yellow"
+                                    : order.status === 2
+                                    ? "red"
+                                    : order.status === 3
+                                    ? "green"
+                                    : ""
+                            }`}
+                        >
+                            {#each statusLabal as id}
+                                <option
+                                    selected={id.id === order.status}
+                                    class={`option ${
+                                        id.id === 1
+                                            ? "yellow"
+                                            : id.id === 2
+                                            ? "red"
+                                            : id.id === 3
+                                            ? "green"
+                                            : ""
+                                    }`}
+                                    value={id}
+                                >
+                                    {id.text}
+                                </option>
+                            {/each}
+                        </select>
                     </div>
                 </div>
-                <div class="bottom">
-                    <select
-                        name="status"
-                        id="status"
-                        class={`status-select ${order.status === 1 ? "yellow" : order.status === 2 ? "red" : order.status === 3 ? "green" : "" }`}>
-                        {#each statusLabal as id}
-                            <option
-                                selected = {id.id === order.status}
-                                class={`option ${id.id === 1 ? "yellow" : id.id === 2 ? "red" : id.id === 3 ? "green" : "" }`}
-                                value={id}>
-                                {id.text}
-                            </option>
-                        {/each}
-                    </select>
-                </div>
-            </div>
-        {/each}
+            {/each}
+        </div>
     </div>
-</div>
+{/if}
 
 <style lang="scss">
     @import "./orderStatus.scss";
