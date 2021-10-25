@@ -1,7 +1,6 @@
 <script lang="ts">
 	import SelectedOrder from '../seletected-order/seleted-order.svelte'    
 
-	let src = '/picture/chicken.jpg';
 	let typeChicken: {name:string, isActive:boolean, path:string}[] = [
 		{ name: 'ทั้งหมด',  isActive: true, path:""},
 		{ name: 'โปรโมชั่น', isActive: false, path:"" },
@@ -11,22 +10,36 @@
 	];
 
 	let menuChickens: {id:number, name:string, quantity:number, img:string, type:number, price:number}[] = [
-		{id: 1, name: 'น่องติดสะโพก', quantity: 0, img: '', type: 2, price: 35},
-		{id: 2, name: 'อกไก่', quantity: 0, img: '', type: 2, price: 35},
-		{id: 3, name: 'ปีกไก่ทอด', quantity: 0, img: '', type: 2, price: 15},
-		{id: 4, name: 'หมูสามชั้นทอด', quantity: 0, img: '', type: 2, price: 40},
-		{id: 5, name: 'โครงไก่ทอด', quantity: 0, img: '', type: 2, price: 45},
-		{id: 6, name: 'ปลายปีก', quantity: 0, img: '', type: 2, price: 20},
-		{id: 7, name: 'น่องไก่', quantity: 0, img: '', type: 2, price: 20},
-		{id: 8, name: 'หอมเจียว', quantity: 0, img: '', type: 4, price: 10},
-		{id: 9, name: 'หนังติดมัน', quantity: 0, img: '', type: 2, price: 20},
-		{id: 10, name: 'ข้าวเหนียวดำ', quantity: 0, img: '', type: 3, price: 10},
-		{id: 11, name: 'ข้าวเหนียวขาว', quantity: 0, img: '', type: 3, price: 10},
-		{id: 12, name: 'ไก่ทั้งตัว', quantity: 0, img: '', type: 2, price: 200},
-		{id: 13, name: 'หอมเจียวใหญ่', quantity: 0, img: '', type: 4, price: 20},
-		{id: 14, name: 'ชุดสุดคุ้ม', quantity: 0, img: '', type: 1, price: 150},
-		{id: 15, name: 'ชุดจุใจใช่เลย', quantity: 0, img: '', type: 1, price: 165},
-		{id: 16, name: 'ชุดครอบครัวสุขสันต์', quantity: 0, img: '', type: 1, price: 125},	
+		{id: 1, name: 'น่องติดสะโพก', quantity: 0, img: '/picture/chicken1.jpg', type: 2, price: 35},
+		{id: 2, name: 'อกไก่', quantity: 0, img: '/picture/chicken2.jpg', type: 2, price: 35},
+		{id: 3, name: 'ปีกไก่ทอด', quantity: 0, img: '/picture/chicken3.jpg', type: 2, price: 15},
+		{id: 4, name: 'หมูสามชั้นทอด', quantity: 0, img: '/picture/chicken4.jpg', type: 2, price: 40},
+		{id: 5, name: 'โครงไก่ทอด', quantity: 0, img: '/picture/chicken5.jpg', type: 2, price: 45},
+		{id: 6, name: 'ปลายปีก', quantity: 0, img: '/picture/chicken6.jpg', type: 2, price: 20},
+		{id: 7, name: 'น่องไก่', quantity: 0, img: '/picture/chicken7.jpg', type: 2, price: 20},
+		{id: 8, name: 'หอมเจียว', quantity: 0, img: '/picture/chicken8.jpg', type: 4, price: 10},
+		{id: 9, name: 'หนังติดมัน', quantity: 0, img: '/picture/chicken9.jpg', type: 2, price: 20},
+		{id: 10, name: 'ข้าวเหนียวดำ', quantity: 0, img: '/picture/chicken10.jpg', type: 3, price: 10},
+		{id: 11, name: 'ข้าวเหนียวขาว', quantity: 0, img: '/picture/chicken11.jpg', type: 3, price: 10},
+		{id: 12, name: 'ไก่ทั้งตัว', quantity: 0, img: '/picture/chicken12.jpg', type: 2, price: 200},
+		{id: 13, name: 'หอมเจียวใหญ่', quantity: 0, img: '/picture/chicken13.jpg', type: 4, price: 20},
+		{id: 14, name: 'ชุดสุดคุ้ม', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 150},
+		{id: 15, name: 'ชุดจุใจใช่เลย', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 165},
+		{id: 16, name: 'ชุดครอบครัวสุขสันต์', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 125},
+		{id: 10, name: 'ข้าวเหนียวดำ', quantity: 0, img: '/picture/chicken10.jpg', type: 3, price: 10},
+		{id: 11, name: 'ข้าวเหนียวขาว', quantity: 0, img: '/picture/chicken11.jpg', type: 3, price: 10},
+		{id: 12, name: 'ไก่ทั้งตัว', quantity: 0, img: '/picture/chicken12.jpg', type: 2, price: 200},
+		{id: 13, name: 'หอมเจียวใหญ่', quantity: 0, img: '/picture/chicken13.jpg', type: 4, price: 20},
+		{id: 14, name: 'ชุดสุดคุ้ม', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 150},
+		{id: 15, name: 'ชุดจุใจใช่เลย', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 165},
+		{id: 16, name: 'ชุดครอบครัวสุขสันต์', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 125},	
+		{id: 10, name: 'ข้าวเหนียวดำ', quantity: 0, img: '/picture/chicken10.jpg', type: 3, price: 10},
+		{id: 11, name: 'ข้าวเหนียวขาว', quantity: 0, img: '/picture/chicken11.jpg', type: 3, price: 10},
+		{id: 12, name: 'ไก่ทั้งตัว', quantity: 0, img: '/picture/chicken12.jpg', type: 2, price: 200},
+		{id: 13, name: 'หอมเจียวใหญ่', quantity: 0, img: '/picture/chicken13.jpg', type: 4, price: 20},
+		{id: 14, name: 'ชุดสุดคุ้ม', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 150},
+		{id: 15, name: 'ชุดจุใจใช่เลย', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 165},
+		{id: 16, name: 'ชุดครอบครัวสุขสันต์', quantity: 0, img: '/picture/chicken.jpg', type: 1, price: 125},		
 	]
 
   let TotalCost: number
@@ -77,7 +90,7 @@
 			{#if typeMenu !== 0}
 				{#each menuChickens.filter(a => a.type === typeMenu) as menuChicken}		
 				<div class="card-menu" on:click={()=> plusOrder(menuChicken.id)}>
-					<img class = "chicken-img" src="{src}" alt="">
+					<img class = "chicken-img" src="{menuChicken.img}" alt="">
 					<div class="card-footer">
 						<div class="chicken-text">
 							{menuChicken.name}
@@ -89,7 +102,7 @@
 				{:else}
 				{#each menuChickens as menuChicken}		
 				<div class="card-menu" on:click={()=> plusOrder(menuChicken.id)}>
-					<img class = "chicken-img" src="{src}" alt="">
+					<img class = "chicken-img" src="{menuChicken.img}" alt="">
 					<div class="card-footer">
 						<div class="chicken-text">
 							{menuChicken.name}

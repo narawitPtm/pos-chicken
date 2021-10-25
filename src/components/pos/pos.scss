@@ -48,6 +48,8 @@
         border-top-left-radius: 5px;
         display: block;
         border-top-right-radius: 5px;
+        object-fit: cover;
+        object-position: 0 10%;
       }
       .card-footer {
         display: flex;
