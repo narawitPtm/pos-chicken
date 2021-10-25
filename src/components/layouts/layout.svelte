@@ -5,7 +5,7 @@
     import  POS from '../pos/pos.svelte'
     import Stock from '../stock/stock.svelte';
     import Report from '../report/report.svelte';
-import { onMount } from 'svelte';
+    import { onMount } from 'svelte';
 
     const routes = {
     '/pos': POS,
