@@ -1,4 +1,7 @@
 <script lang="ts">
+  import type GetStock from '../../Model/GetStock'
+  import { get } from '../store/apipos';
+  import { onMount } from 'svelte'
 
   type stockType = {
     stockId: number
@@ -8,6 +11,22 @@
     totalStockPrice: number
     pointToBuy: number
     additionalUnit: string
+  }
+
+  onMount( async () => {
+    getStock()
+  })
+
+  let responseStock: Array<GetStock> = []
+
+  async function getStock() : Promise<void> {
+    try {
+      const res: Array<GetStock> = await get('/stock')
+      responseStock = res
+      console.log(responseStock)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   let listStock: stockType[] = [
@@ -85,10 +104,10 @@
   <div class="data-table">
     <table id="bodyTable">
       <tbody id="dataBody" class="body-table">
-        {#each listStock as row}
+        {#each responseStock as row, index}
           <tr class="row-data-column">
             <td class="data-column">
-              <div class="data stockId">{row.stockId}</div>
+              <div class="data stockId">{index + 1}</div>
             </td>
             <td class="data-column">
               <div class="data stockName">{row.stockName}</div>
@@ -97,17 +116,17 @@
               <div class="data stockTotal">{row.stockTotal}</div>
             </td>
             <td class="data-column">
-              <div class="data stockUnitPrice">{row.stockUnitPrice}</div>
+              <div class="data stockUnitPrice">{row.stockunitPrice}</div>
             </td>
             <td class="data-column">
-              <div class="data totalStockPrice">{row.totalStockPrice}</div>
+              <div class="data totalStockPrice">{row.stockunitPrice * row.stockTotal}</div>
             </td>
             <td class="data-column">
-              <div class="data pointToBuy">{row.pointToBuy}</div>
+              <div class="data pointToBuy">{row.pointtoBuy}</div>
             </td>
             <td class="data-column">
-              <div class="data additionalUnit" style="color: {row.stockTotal > row.pointToBuy ? 'red': 'green'}">
-                {row.additionalUnit}
+              <div class="data additionalUnit" style="color: {row.stockTotal > row.pointtoBuy ? 'red': 'green'}">
+                {row.stockTotal > row.pointtoBuy ? 'ไม่ซื้อ': 'ซื้อ'}
               </div>
             </td>
           </tr>
