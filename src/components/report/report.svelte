@@ -1,5 +1,8 @@
 <script lang="ts">
     import Select from "svelte-select";
+    import type GetReport from '../../Model/GetReport'
+    import { get } from '../store/apipos';
+    import { onMount } from 'svelte'
 
     let total: { menu: string; quantity: number; price: number }[] = [
         {
@@ -63,8 +66,27 @@
         { value: 3, label: "เดือน" },
         { value: 4, label: "ปี" },
     ];
-
+    onMount(async() => {
+		getReport()
+	}) 
     let value = { value: 1, label: "วัน" };
+    let responseReport: Array<GetReport> = []
+    let totalSum: number = 0
+	async function getReport(): Promise<void> {
+		try {
+			const response: Array<GetReport> = await get('/Order/report')
+            responseReport = response
+            sumTotal()
+			console.log(response)
+			
+		} catch (error) {
+			console.error(error)
+		}
+	}
+
+    function sumTotal() {
+        totalSum = responseReport.map(item => item.totalPrice).reduce((a, b) => a + b, 0)
+    }
 </script>
 
 <div id="report">
@@ -83,22 +105,22 @@
         <div id="total">
             <div class="total-div">
                 <p class="total-text">ยอดขายรวม</p>
-                <p class="total-text">1,200,000</p>
+                <p class="total-text">{new Intl.NumberFormat('th-TH').format(totalSum)}</p>
                 <p class="total-text">บาท</p>
             </div>
-            <div class="total-div">
+            <!-- <div class="total-div">
                 <p class="total-text">กำไรรวม</p>
                 <p class="total-text">1,200,000</p>
                 <p class="total-text">บาท</p>
-            </div>
+            </div> -->
         </div>
         <div id="report-menu">
-            {#each total as item}
+            {#each responseReport as item}
             <div class="menu">
-                <p class="name">{item.menu}</p>
-                <p class="quantity">{item.quantity}</p>
+                <p class="name">{item.stokcName}</p>
+                <p class="quantity">{new Intl.NumberFormat('th-TH').format(item.totalUnit)}</p>
                 <p class="piece">ชิ้น</p>
-                <p class="price">{item.price}</p>
+                <p class="price">{new Intl.NumberFormat('th-TH').format(item.totalPrice)}</p>
                 <p class="bath">บาท</p>
             </div>
             {/each}
