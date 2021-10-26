@@ -69,15 +69,11 @@
 		}
 	}
 
-function mapDataToCard() {
-	return menuPos.filter((a) => typeMenu ? a.typeMenuN === typeMenu : a.typeMenuN )
-} 
-
 </script>
 
 {#if loading}
 	<Loading />
-{:else}
+{/if}
 	<div id="posMain">
 		<div class="filter-btn-box">
 			{#each typeChicken as typeKen, index}
@@ -115,7 +111,7 @@ function mapDataToCard() {
 		</div>
 		<SelectedOrder bind:menuPos bind:TotalCost bind:loading/>
 	</div>
-{/if}
+
 
 <style lang="scss">
 	@import "./pos.scss"

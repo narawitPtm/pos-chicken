@@ -31,7 +31,7 @@
 
 {#if loading}
   <Loading />
-{:else}
+{/if}
   <div id="table" class="table-box">
     <div id="header"><p class="header-text">สินค้าคงคลัง</p></div>
     <div class="custom-table">
@@ -104,7 +104,7 @@
       </table>
     </div>
   </div>
-{/if}
+
 
 <style lang="scss">
   @import "./stock.scss";
