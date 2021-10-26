@@ -6,7 +6,7 @@ class GetStock {
   public stockName:string = String()
   public stockTotal: number = Number()
   public stockunitPrice: number = Number()
-  public typeMenu: number = Number()
+  public typeMenuN: number = Number()
   public quantity: number
   constructor(zero: number = 0) {
    this.quantity = zero

@@ -8,7 +8,6 @@
 	// import PostModelResponse from '../../Model/PostModelResponse'
 
 	let loading: boolean = true
-	let src = "/picture/chicken.jpg"
 	let typeChicken: { name: string, isActive: boolean, path: string }[] = [
 		{ name: "ทั้งหมด", isActive: true, path: "" },
 		{ name: "โปรโมชั่น", isActive: false, path: "" },
@@ -16,95 +15,6 @@
 		{ name: "ข้าวเหนียว", isActive: false, path: "" },
 		{ name: "หอมเจียว", isActive: false, path: "" },
 	]
-
-	// let menuChickens: {
-	// 	id: number
-	// 	name: string
-	// 	quantity: number
-	// 	img: string
-	// 	type: number
-	// 	price: number
-	// }[] = [
-	// 	{
-	// 		id: 1,
-	// 		name: "น่องติดสะโพก",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 2,
-	// 		price: 35,
-	// 	},
-	// 	{ id: 2, name: "อกไก่", quantity: 0, img: "", type: 2, price: 35 },
-	// 	{ id: 3, name: "ปีกไก่ทอด", quantity: 0, img: "", type: 2, price: 15 },
-	// 	{
-	// 		id: 4,
-	// 		name: "หมูสามชั้นทอด",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 2,
-	// 		price: 40,
-	// 	},
-	// 	{ id: 5, name: "โครงไก่ทอด", quantity: 0, img: "", type: 2, price: 45 },
-	// 	{ id: 6, name: "ปลายปีก", quantity: 0, img: "", type: 2, price: 20 },
-	// 	{ id: 7, name: "น่องไก่", quantity: 0, img: "", type: 2, price: 20 },
-	// 	{ id: 8, name: "หอมเจียว", quantity: 0, img: "", type: 4, price: 10 },
-	// 	{ id: 9, name: "หนังติดมัน", quantity: 0, img: "", type: 2, price: 20 },
-	// 	{
-	// 		id: 10,
-	// 		name: "ข้าวเหนียวดำ",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 3,
-	// 		price: 10,
-	// 	},
-	// 	{
-	// 		id: 11,
-	// 		name: "ข้าวเหนียวขาว",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 3,
-	// 		price: 10,
-	// 	},
-	// 	{
-	// 		id: 12,
-	// 		name: "ไก่ทั้งตัว",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 2,
-	// 		price: 200,
-	// 	},
-	// 	{
-	// 		id: 13,
-	// 		name: "หอมเจียวใหญ่",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 4,
-	// 		price: 20,
-	// 	},
-	// 	{
-	// 		id: 14,
-	// 		name: "ชุดสุดคุ้ม",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 1,
-	// 		price: 150,
-	// 	},
-	// 	{
-	// 		id: 15,
-	// 		name: "ชุดจุใจใช่เลย",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 1,
-	// 		price: 165,
-	// 	},
-	// 	{
-	// 		id: 16,
-	// 		name: "ชุดครอบครัวสุขสันต์",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 1,
-	// 		price: 125,
-	// 	},
-	// ]
 
 	let TotalCost: number
 
@@ -155,16 +65,6 @@
 			console.error(error)
 		}
 	}
-	// async function postOrder(): Promise<void> {
-	// 	try {
-	// 		// const newRequest: PostModel = postOrder()
-	// 		const reponseOrder: PostModelResponse = await post('/Order/buy')
-	// 		console.log(reponseOrder)
-
-	// 	} catch (error) {
-	// 		console.error(error)
-	// 	}
-	// }
 
 </script>
 

@@ -1,6 +1,42 @@
 <script lang="ts">
-    export let TotalCost: number
-    let cash: number = 0
+import type GetModel from "../../Model/GetModel";
+import { get, post } from "../store/apipos"
+import type PostModelRequest from "../../Model/PostModel"
+
+export let TotalCost: number
+let cash: number = 0
+export let menuPos: GetModel[];
+export let modalShow: boolean
+
+function mapBodyBill(): PostModelRequest[] {
+    let newRequests: PostModelRequest[]
+    menuPos.forEach((menu)=> {
+        if (menu.quantity>0) {
+            let newRequest: PostModelRequest = {
+                stockId: menu.id,
+                totalPromotion: 0,
+                quantityOrder: menu.quantity,
+                typeMenu: menu.typeMenuN
+            }
+            console.log(newRequest);
+            
+            newRequests.push(newRequest)
+        }
+    })
+    return newRequests
+}
+
+async function postBill(): Promise<void> {
+		try {
+			const newRequest: PostModelRequest[] = mapBodyBill()
+            const responseBill: any = await post('/Order/buy', newRequest)
+            console.log(responseBill);
+		} catch (error) {
+			console.error(error)
+		}
+        modalShow = false
+	}
+
 </script>
 
 <div id="calculate-card">
@@ -33,7 +69,7 @@
         </div>
     </div>
     <div id="bottom">
-        <button class="cash-button">ชำระเงิน</button>
+        <button class="cash-button" on:click={postBill}>ชำระเงิน</button>
     </div>
 </div>
 

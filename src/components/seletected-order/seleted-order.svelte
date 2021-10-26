@@ -64,7 +64,7 @@
   {#if modalShow === true}
   <div id="modal" >
     <div id="box-modal">
-      <Calculate TotalCost={TotalCost}/>
+      <Calculate bind:menuPos bind:TotalCost bind:modalShow/>
     </div>
     <div id="dummy" on:click={closeModal}>
     </div>

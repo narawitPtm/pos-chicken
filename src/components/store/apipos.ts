@@ -1,4 +1,3 @@
-
 const baseUrl: string = 'https://localhost:44382'
 
 export async function get(path: string) {
