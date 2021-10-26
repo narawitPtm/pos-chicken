@@ -1,5 +1,6 @@
 <script lang="ts">
     export let TotalCost: number
+    let cash: number = 0
 </script>
 
 <div id="calculate-card">
@@ -20,14 +21,14 @@
         <div class="detail-item">
             <p class="label">รับมา</p>
             <div class="price-input">
-                <input class="input" type="number" placeholder=""/>
+                <input class="input" type="number" placeholder="" bind:value={cash}/>
             </div>
             <p class="bath">บาท</p>
         </div>
         <hr style="margin: 10px 0 10px 0;">
         <div class="detail-item">
             <p class="label">เงินทอน</p>
-            <p class="price">0.00</p>
+            <p class="price">{cash - TotalCost}</p>
             <p class="bath">บาท</p>
         </div>
     </div>
