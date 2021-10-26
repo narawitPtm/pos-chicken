@@ -35,10 +35,10 @@ async function postBill(): Promise<void> {
 			console.error(error)
 		}
         finally {
+            modalShow = false
             setTimeout(() => {
                 //location.reload()
                 loading = false
-                modalShow = false
 		}, 500)
         }
 	}
