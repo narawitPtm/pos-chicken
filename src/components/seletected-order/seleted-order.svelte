@@ -5,7 +5,7 @@
   let modalShow:boolean = false
 
   export let menuPos: Array<GetModel>;
-
+  export let loading: boolean
   export let TotalCost: number =  0
 
 
@@ -29,7 +29,6 @@
     })
     menuPos = menuPos
     TotalCost = TotalCost
-    
   }
 
   function plusOrder(id:number) {
@@ -59,7 +58,7 @@
   {#if modalShow === true}
   <div id="modal" >
     <div id="box-modal">
-      <Calculate TotalCost={TotalCost}/>
+      <Calculate bind:menuPos bind:TotalCost bind:modalShow bind:loading/>
     </div>
     <div id="dummy" on:click={closeModal}>
     </div>

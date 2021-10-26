@@ -8,7 +8,8 @@
 	let menuPos: Array<GetMenu> = []
 	let loading: boolean = true
 	let TotalCost: number
-  let typeMenu: number = 0
+	let typeMenu: number = 0
+
 	let typeChicken: { name: string, isActive: boolean, path: string }[] = [
 		{ name: "ทั้งหมด", isActive: true, path: "" },
 		{ name: "โปรโมชั่น", isActive: false, path: "" },
@@ -19,11 +20,8 @@
 
 	onMount(async () => {
     await getStock()
-		setTimeout(() => {
-			console.log("delayed!")
-			loading = false
-		}, 1000)
 	})
+
 
 	function calcost(id: number) {
 		menuPos.forEach((item) => {
@@ -44,7 +42,6 @@
 			}
 		})
 		typeChicken = typeChicken
-    console.log(typeMenu)
     menuPos = menuPos
 	}
 
@@ -60,15 +57,21 @@
 
 	async function getStock(): Promise<void> {
 		try {
+			loading = true
 			menuPos = await get("/stock")
 		} catch (error) {
 			console.error(error)
 		}
+		finally {
+      setTimeout(() => {
+			loading = false
+		}, 1000)
+		}
 	}
 
-  function mapDataToCard(id: number) {
-    return menuPos.filter((a) => typeMenu ? a.typeMenuN === typeMenu : a.typeMenuN )
-  } 
+function mapDataToCard() {
+	return menuPos.filter((a) => typeMenu ? a.typeMenuN === typeMenu : a.typeMenuN )
+} 
 
 </script>
 
@@ -86,7 +89,7 @@
 		</div>
 		<div id="nongkaiBox">
 			<div id="nongKai">
-					{#each mapDataToCard(typeMenu) as menuChicken}
+					{#each menuPos.filter((a) => typeMenu ? a.typeMenuN === typeMenu : a.typeMenuN ) as menuChicken}
 						<div
 							class="card-menu"
 							on:click={() => plusOrder(menuChicken.id)}
@@ -110,7 +113,7 @@
 					{/each}
 			</div>
 		</div>
-		<SelectedOrder bind:menuPos bind:TotalCost />
+		<SelectedOrder bind:menuPos bind:TotalCost bind:loading/>
 	</div>
 {/if}
 

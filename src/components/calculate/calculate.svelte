@@ -1,6 +1,54 @@
 <script lang="ts">
-    export let TotalCost: number
-    let cash: number = 0
+import type GetModel from "../../Model/GetModel";
+import { post } from "../store/apipos"
+import type PostModelRequest from "../../Model/PostModel"
+
+export let TotalCost: number
+let cash: number = 0
+export let menuPos: GetModel[];
+export let modalShow: boolean
+export let loading: boolean
+
+function mapBodyBill(): PostModelRequest[] {
+    let newRequests: PostModelRequest[] = []
+    menuPos.forEach((menu)=> {
+        if (menu.quantity>0) {
+            let newRequest: PostModelRequest = {
+                stockId: menu.id,
+                totalPromotion: 0,
+                quantityOrder: menu.quantity,
+                typeMenu: menu.typeMenuN
+            }
+            newRequests.push(newRequest)
+        }
+    })
+    return newRequests
+}
+
+async function postBill(): Promise<void> {
+		try {
+            loading = true
+			const newRequest: PostModelRequest[] = mapBodyBill()
+            const responseBill: any = await post('/Order/buy', newRequest)
+            setZero()
+		} catch (error) {
+			console.error(error)
+		}
+        finally {
+            setTimeout(() => {
+                //location.reload()
+                loading = false
+                modalShow = false
+		}, 500)
+        }
+	}
+
+function setZero() {
+    menuPos.map( x => x.quantity = 0)
+    TotalCost = 0
+    menuPos = menuPos
+}
+
 </script>
 
 <div id="calculate-card">
@@ -33,7 +81,11 @@
         </div>
     </div>
     <div id="bottom">
-        <button class="cash-button">ชำระเงิน</button>
+        {#if cash >= TotalCost && TotalCost !== 0}
+        <button class="cash-button" on:click={postBill}>ชำระเงิน</button>
+        {:else}
+        <button class="cash-button-dis">ชำระเงิน</button>
+        {/if}
     </div>
 </div>
 

@@ -242,7 +242,6 @@
     let loading: boolean = true;
     onMount(async () => {
         setTimeout(() => {
-            console.log("delayed!");
             loading = false;
         }, 1000);
     });
