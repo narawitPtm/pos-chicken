@@ -4,16 +4,6 @@
   import { onMount } from "svelte";
   import Loading from "../loading/loading.svelte";
 
-  type stockType = {
-    stockId: number;
-    stockName: string;
-    stockTotal: number;
-    stockUnitPrice: number;
-    totalStockPrice: number;
-    pointToBuy: number;
-    additionalUnit: string;
-  };
-
   let loading: boolean = true;
 
   onMount(async () => {
@@ -22,7 +12,7 @@
       loading = false;
     }, 1000);
 
-    // getStock();
+     getStock();
   });
 
   let responseStock: Array<GetStock> = [];
@@ -31,50 +21,12 @@
     try {
       const res: Array<GetStock> = await get("/stock");
       responseStock = res;
-      console.log(responseStock);
+      console.log(responseStock)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
   }
 
-  let listStock: stockType[] = [
-    {
-      stockId: 1,
-      stockName: "ไก่ทั้งตัว",
-      stockTotal: 5,
-      stockUnitPrice: 70,
-      totalStockPrice: 350,
-      pointToBuy: 10,
-      additionalUnit: "ซื้อ",
-    },
-    {
-      stockId: 2,
-      stockName: "น่องไก่",
-      stockTotal: 25,
-      stockUnitPrice: 40,
-      totalStockPrice: 1000,
-      pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
-    },
-    {
-      stockId: 2,
-      stockName: "น่องไก่",
-      stockTotal: 25,
-      stockUnitPrice: 40,
-      totalStockPrice: 1000,
-      pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
-    },
-    {
-      stockId: 2,
-      stockName: "น่องไก่",
-      stockTotal: 25,
-      stockUnitPrice: 40,
-      totalStockPrice: 1000,
-      pointToBuy: 15,
-      additionalUnit: "ไม่ซื้อ",
-    },
-  ];
 </script>
 
 {#if loading}

@@ -5,74 +5,6 @@
     import { onMount } from "svelte"
     import Loading from "../loading/loading.svelte"
 
-    let total: { menu: string, quantity: number, price: number }[] = [
-        {
-            menu: "น่องติดสะโพก",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "อกไก่",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "ปิ้กไก่ทอด",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "หมูสามชั้นทอด",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "น่องไก่",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "หอมเจียว",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "หนังติดมัน",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "ข้าวเหนียวดำ",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "ไก่ทั้งตัว",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "หอมเจียวใหญ่",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "ชุดสุดคุ้ม",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "ชุดจุใจใช่เลย",
-            quantity: 1210,
-            price: 54450,
-        },
-        {
-            menu: "ชุดครอบครัวสุขสันต์",
-            quantity: 1210,
-            price: 54450,
-        },
-    ]
-
     let items: { value: number; label: string }[] = [
         { value: 1, label: "วัน" },
         { value: 2, label: "สัปดาห์" },
@@ -85,22 +17,54 @@
         setTimeout(() => {
             console.log("delayed!");
             loading = false;
-            getReport()
+            getReport(new Date())
         }, 1000);
         
     });
     let value = { value: 1, label: "วัน" };
     let responseReport: Array<GetReport> = [];
     let totalSum: number = 0;
-    async function getReport(): Promise<void> {
+    async function getReport(datetime: Date): Promise<void> {
         try {
-            const response: Array<GetReport> = await get("/Order/report");
+            const response: Array<GetReport> = await get(`/Order/report/?scope=${datetime.toISOString()}`);
             responseReport = response;
             sumTotal();
             console.log(response);
         } catch (error) {
             console.error(error);
         }
+    }
+
+    function handleSelect(select) {
+        console.log(select.detail)
+        getByDate(select.detail.value)
+    }
+
+    function getByDate(start: number) {
+        let date = new Date()
+        switch (start) {
+            case 1: 
+                getReport(date)
+                console.log(date)
+                break;
+            case 2:
+                let week = new Date(date.setDate(date.getDate() - date.getDay()))
+                getReport(week)
+                console.log(week)
+                break;
+            case 3:
+                let firstday = new Date(date.getFullYear(), date.getMonth(), 1)
+                getReport(firstday)
+                break;
+            case 4:
+                let year = new Date(date.getFullYear(), 1, 1)
+                getReport(year)
+                break;
+            default:
+                break;
+        }
+        let day: number = date.getDay()
+        date.setDate(date.getDate() - start)
     }
 
     function sumTotal() {
@@ -123,7 +87,7 @@
                     <p class="text">รายงานประจำ</p>
                 </div>
                 <div class="select">
-                    <Select {items} {value} on:select={() => {}} />
+                    <Select {items} {value} on:select={ handleSelect } />
                 </div>
             </div>
             <div id="total">
