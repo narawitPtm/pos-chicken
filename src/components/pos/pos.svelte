@@ -2,13 +2,13 @@
 	import SelectedOrder from "../seletected-order/seleted-order.svelte"
 	import Loading from "../loading/loading.svelte"
 	import { onMount } from "svelte"
-	import { get, post } from "../store/apipos"
-	// import  PostModel from '../../Model/PostModel'
-	import type GetModel from "../../Model/GetModel"
-	// import PostModelResponse from '../../Model/PostModelResponse'
+	import { get } from "../store/apipos"
+	import type GetMenu from "../../Model/GetModel"
 
+	let menuPos: Array<GetMenu> = []
 	let loading: boolean = true
-	let src = "/picture/chicken.jpg"
+	let TotalCost: number
+  let typeMenu: number = 0
 	let typeChicken: { name: string, isActive: boolean, path: string }[] = [
 		{ name: "ทั้งหมด", isActive: true, path: "" },
 		{ name: "โปรโมชั่น", isActive: false, path: "" },
@@ -17,96 +17,13 @@
 		{ name: "หอมเจียว", isActive: false, path: "" },
 	]
 
-	// let menuChickens: {
-	// 	id: number
-	// 	name: string
-	// 	quantity: number
-	// 	img: string
-	// 	type: number
-	// 	price: number
-	// }[] = [
-	// 	{
-	// 		id: 1,
-	// 		name: "น่องติดสะโพก",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 2,
-	// 		price: 35,
-	// 	},
-	// 	{ id: 2, name: "อกไก่", quantity: 0, img: "", type: 2, price: 35 },
-	// 	{ id: 3, name: "ปีกไก่ทอด", quantity: 0, img: "", type: 2, price: 15 },
-	// 	{
-	// 		id: 4,
-	// 		name: "หมูสามชั้นทอด",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 2,
-	// 		price: 40,
-	// 	},
-	// 	{ id: 5, name: "โครงไก่ทอด", quantity: 0, img: "", type: 2, price: 45 },
-	// 	{ id: 6, name: "ปลายปีก", quantity: 0, img: "", type: 2, price: 20 },
-	// 	{ id: 7, name: "น่องไก่", quantity: 0, img: "", type: 2, price: 20 },
-	// 	{ id: 8, name: "หอมเจียว", quantity: 0, img: "", type: 4, price: 10 },
-	// 	{ id: 9, name: "หนังติดมัน", quantity: 0, img: "", type: 2, price: 20 },
-	// 	{
-	// 		id: 10,
-	// 		name: "ข้าวเหนียวดำ",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 3,
-	// 		price: 10,
-	// 	},
-	// 	{
-	// 		id: 11,
-	// 		name: "ข้าวเหนียวขาว",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 3,
-	// 		price: 10,
-	// 	},
-	// 	{
-	// 		id: 12,
-	// 		name: "ไก่ทั้งตัว",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 2,
-	// 		price: 200,
-	// 	},
-	// 	{
-	// 		id: 13,
-	// 		name: "หอมเจียวใหญ่",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 4,
-	// 		price: 20,
-	// 	},
-	// 	{
-	// 		id: 14,
-	// 		name: "ชุดสุดคุ้ม",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 1,
-	// 		price: 150,
-	// 	},
-	// 	{
-	// 		id: 15,
-	// 		name: "ชุดจุใจใช่เลย",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 1,
-	// 		price: 165,
-	// 	},
-	// 	{
-	// 		id: 16,
-	// 		name: "ชุดครอบครัวสุขสันต์",
-	// 		quantity: 0,
-	// 		img: "",
-	// 		type: 1,
-	// 		price: 125,
-	// 	},
-	// ]
-
-	let TotalCost: number
+	onMount(async () => {
+    await getStock()
+		setTimeout(() => {
+			console.log("delayed!")
+			loading = false
+		}, 1000)
+	})
 
 	function calcost(id: number) {
 		menuPos.forEach((item) => {
@@ -117,7 +34,6 @@
 		TotalCost = TotalCost
 	}
 
-	let typeMenu: number = 0
 	function submenu(index: number) {
 		typeChicken.forEach((item, indexs) => {
 			if (index === indexs) {
@@ -128,6 +44,8 @@
 			}
 		})
 		typeChicken = typeChicken
+    console.log(typeMenu)
+    menuPos = menuPos
 	}
 
 	function plusOrder(menuId: number) {
@@ -140,14 +58,6 @@
 		menuPos = menuPos
 	}
 
-	onMount(async () => {
-		setTimeout(() => {
-			console.log("delayed!")
-			loading = false
-			getStock()
-		}, 1000)
-	})
-	let menuPos: Array<GetModel> = []
 	async function getStock(): Promise<void> {
 		try {
 			menuPos = await get("/stock")
@@ -155,16 +65,10 @@
 			console.error(error)
 		}
 	}
-	// async function postOrder(): Promise<void> {
-	// 	try {
-	// 		// const newRequest: PostModel = postOrder()
-	// 		const reponseOrder: PostModelResponse = await post('/Order/buy')
-	// 		console.log(reponseOrder)
 
-	// 	} catch (error) {
-	// 		console.error(error)
-	// 	}
-	// }
+  function mapDataToCard(id: number) {
+    return menuPos.filter((a) => typeMenu ? a.typeMenuN === typeMenu : a.typeMenuN )
+  } 
 
 </script>
 
@@ -180,11 +84,9 @@
 				>
 			{/each}
 		</div>
-		<!-- picture -->
 		<div id="nongkaiBox">
 			<div id="nongKai">
-				{#if typeMenu !== 0}
-					{#each menuPos.filter((a) => a.typeMenu === typeMenu) as menuChicken}
+					{#each mapDataToCard(typeMenu) as menuChicken}
 						<div
 							class="card-menu"
 							on:click={() => plusOrder(menuChicken.id)}
@@ -206,34 +108,9 @@
 							</div>
 						</div>
 					{/each}
-				{:else}
-					{#each menuPos as menuChicken}
-						<div
-							class="card-menu"
-							on:click={() => plusOrder(menuChicken.id)}
-						>
-							<img class="chicken-img" src={menuChicken.pathUrl} alt="" />
-							<div class="card-footer">
-								<div class="chicken-text">
-									{menuChicken.stockName}
-								</div>
-								<div
-									class={`nothing ${
-										menuChicken.quantity > 0
-											? "selected"
-											: ""
-									}`}
-								>
-									{menuChicken.quantity ?? 0}
-								</div>
-							</div>
-						</div>
-					{/each}
-				{/if}
 			</div>
 		</div>
 		<SelectedOrder bind:menuPos bind:TotalCost />
-		<!-- <SelectedOrder bind:TotalCost /> -->
 	</div>
 {/if}
 
