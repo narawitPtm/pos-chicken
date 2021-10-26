@@ -1,5 +1,5 @@
 
-const baseUrl: string = 'http://localhost:8080'
+const baseUrl: string = 'https://localhost:44382'
 
 export async function get(path: string) {
   try {

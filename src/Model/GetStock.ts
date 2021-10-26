@@ -3,5 +3,6 @@ class GetStock {
     public stockTotal: number = Number()
     public stockunitPrice: number = Number()
     public pointtoBuy: number = Number()
+    public typeMenuN: number = Number()
 }
 export default GetStock

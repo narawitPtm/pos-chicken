@@ -1,11 +1,11 @@
 <script lang="ts">
-    import Select from "svelte-select";
-    import type GetReport from "../../Model/GetReport";
-    import { get } from "../store/apipos";
-    import { onMount } from "svelte";
-    import Loading from "../loading/loading.svelte";
+    import Select from "svelte-select"
+    import type GetReport from "../../Model/GetReport"
+    import { get } from "../store/apipos"
+    import { onMount } from "svelte"
+    import Loading from "../loading/loading.svelte"
 
-    let total: { menu: string; quantity: number; price: number }[] = [
+    let total: { menu: string, quantity: number, price: number }[] = [
         {
             menu: "น่องติดสะโพก",
             quantity: 1210,
@@ -71,7 +71,7 @@
             quantity: 1210,
             price: 54450,
         },
-    ];
+    ]
 
     let items: { value: number; label: string }[] = [
         { value: 1, label: "วัน" },
@@ -85,8 +85,9 @@
         setTimeout(() => {
             console.log("delayed!");
             loading = false;
+            getReport()
         }, 1000);
-        // getReport()
+        
     });
     let value = { value: 1, label: "วัน" };
     let responseReport: Array<GetReport> = [];

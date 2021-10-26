@@ -1,29 +1,29 @@
 <script lang="ts">
-	import SelectedOrder from "../seletected-order/seleted-order.svelte";
-	import Loading from "../loading/loading.svelte";
-	import { onMount } from "svelte";
-	import { get, post } from "../store/apipos";
-	// import  PostModel from '../../Model/PostModel';
-	import type GetModel from "../../Model/GetModel";
-	// import PostModelResponse from '../../Model/PostModelResponse';
+	import SelectedOrder from "../seletected-order/seleted-order.svelte"
+	import Loading from "../loading/loading.svelte"
+	import { onMount } from "svelte"
+	import { get, post } from "../store/apipos"
+	// import  PostModel from '../../Model/PostModel'
+	import type GetModel from "../../Model/GetModel"
+	// import PostModelResponse from '../../Model/PostModelResponse'
 
-	let loading: boolean = true;
-	let src = "/picture/chicken.jpg";
-	let typeChicken: { name: string; isActive: boolean; path: string }[] = [
+	let loading: boolean = true
+	let src = "/picture/chicken.jpg"
+	let typeChicken: { name: string, isActive: boolean, path: string }[] = [
 		{ name: "ทั้งหมด", isActive: true, path: "" },
 		{ name: "โปรโมชั่น", isActive: false, path: "" },
 		{ name: "ไก่ทอด", isActive: false, path: "" },
 		{ name: "ข้าวเหนียว", isActive: false, path: "" },
 		{ name: "หอมเจียว", isActive: false, path: "" },
-	];
+	]
 
 	let menuChickens: {
-		id: number;
-		name: string;
-		quantity: number;
-		img: string;
-		type: number;
-		price: number;
+		id: number
+		name: string
+		quantity: number
+		img: string
+		type: number
+		price: number
 	}[] = [
 		{
 			id: 1,
@@ -104,57 +104,56 @@
 			type: 1,
 			price: 125,
 		},
-	];
+	]
 
-	let TotalCost: number;
+	let TotalCost: number
 
 	function calcost(id: number) {
 		menuChickens.forEach((item) => {
 			if (id === item.id) {
-				TotalCost += item.price;
+				TotalCost += item.price
 			}
-		});
-		TotalCost = TotalCost;
+		})
+		TotalCost = TotalCost
 	}
 
-	let typeMenu: number = 0;
+	let typeMenu: number = 0
 	function submenu(index: number) {
 		typeChicken.forEach((item, indexs) => {
 			if (index === indexs) {
-				item.isActive = true;
-				typeMenu = index;
+				item.isActive = true
+				typeMenu = index
 			} else {
-				item.isActive = false;
+				item.isActive = false
 			}
-		});
-		typeChicken = typeChicken;
+		})
+		typeChicken = typeChicken
 	}
 
 	function plusOrder(menuId: number) {
 		menuChickens.forEach((item) => {
 			if (menuId === item.id) {
-				item.quantity = item.quantity + 1;
-				calcost(item.id);
+				item.quantity = item.quantity + 1
+				calcost(item.id)
 			}
-		});
-		menuChickens = menuChickens;
+		})
+		menuChickens = menuChickens
 	}
 
 	onMount(async () => {
 		setTimeout(() => {
-			console.log("delayed!");
-			loading = false;
-		}, 1000);
-
-		// getStock();
-	});
-	let menuPos: GetModel = {};
+			console.log("delayed!")
+			loading = false
+			getStock()
+		}, 1000)
+	})
+	let menuPos: GetModel = {}
 	async function getStock(): Promise<void> {
 		try {
-			menuPos = await get("/stock");
-			console.log(menuPos);
+			menuPos = await get("/stock")
+			console.log(menuPos)
 		} catch (error) {
-			console.error(error);
+			console.error(error)
 		}
 	}
 	// async function postOrder(): Promise<void> {
@@ -238,5 +237,5 @@
 {/if}
 
 <style lang="scss">
-	@import "./pos.scss";
+	@import "./pos.scss"
 </style>
