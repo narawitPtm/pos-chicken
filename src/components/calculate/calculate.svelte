@@ -1,6 +1,6 @@
 <script lang="ts">
 import type GetModel from "../../Model/GetModel";
-import { get, post } from "../store/apipos"
+import { post } from "../store/apipos"
 import type PostModelRequest from "../../Model/PostModel"
 
 export let TotalCost: number
@@ -19,11 +19,9 @@ function mapBodyBill(): PostModelRequest[] {
                 quantityOrder: menu.quantity,
                 typeMenu: menu.typeMenuN
             }
-            console.log(newRequest);
             newRequests.push(newRequest)
         }
     })
-    console.log(newRequests);
     return newRequests
 }
 
@@ -32,17 +30,24 @@ async function postBill(): Promise<void> {
             loading = true
 			const newRequest: PostModelRequest[] = mapBodyBill()
             const responseBill: any = await post('/Order/buy', newRequest)
-            console.log(responseBill);
+            setZero()
 		} catch (error) {
 			console.error(error)
 		}
         finally {
             setTimeout(() => {
-                location.reload()
-                // loading = false
+                //location.reload()
+                loading = false
+                modalShow = false
 		}, 500)
         }
 	}
+
+function setZero() {
+    menuPos.map( x => x.quantity = 0)
+    TotalCost = 0
+    menuPos = menuPos
+}
 
 </script>
 
@@ -76,10 +81,10 @@ async function postBill(): Promise<void> {
         </div>
     </div>
     <div id="bottom">
-        {#if TotalCost >= cash}
-        <button class="cash-button-dis">ชำระเงิน</button>
-        {:else}
+        {#if cash >= TotalCost && TotalCost !== 0}
         <button class="cash-button" on:click={postBill}>ชำระเงิน</button>
+        {:else}
+        <button class="cash-button-dis">ชำระเงิน</button>
         {/if}
     </div>
 </div>

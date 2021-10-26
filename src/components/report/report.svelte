@@ -15,7 +15,6 @@
     let loading: boolean = true;
     onMount(async () => {
         setTimeout(() => {
-            console.log("delayed!");
             loading = false;
             getReport(new Date())
         }, 1000);
@@ -26,17 +25,21 @@
     let totalSum: number = 0;
     async function getReport(datetime: Date): Promise<void> {
         try {
+            loading = true
             const response: Array<GetReport> = await get(`/Order/report/?scope=${datetime.toISOString()}`);
             responseReport = response;
             sumTotal();
-            console.log(response);
         } catch (error) {
             console.error(error);
+        }
+        finally {
+            setTimeout(() => {
+            loading = false;
+        }, 1000);
         }
     }
 
     function handleSelect(select) {
-        console.log(select.detail)
         getByDate(select.detail.value)
     }
 
@@ -45,12 +48,10 @@
         switch (start) {
             case 1: 
                 getReport(date)
-                console.log(date)
                 break;
             case 2:
                 let week = new Date(date.setDate(date.getDate() - date.getDay()))
                 getReport(week)
-                console.log(week)
                 break;
             case 3:
                 let firstday = new Date(date.getFullYear(), date.getMonth(), 1)

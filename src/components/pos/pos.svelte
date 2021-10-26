@@ -20,10 +20,6 @@
 
 	onMount(async () => {
     await getStock()
-		setTimeout(() => {
-			console.log("delayed!")
-			loading = false
-		}, 1000)
 	})
 
 
@@ -46,7 +42,6 @@
 			}
 		})
 		typeChicken = typeChicken
-    console.log(typeMenu)
     menuPos = menuPos
 	}
 
@@ -68,7 +63,9 @@
 			console.error(error)
 		}
 		finally {
+      setTimeout(() => {
 			loading = false
+		}, 1000)
 		}
 	}
 
