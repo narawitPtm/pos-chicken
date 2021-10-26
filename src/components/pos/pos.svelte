@@ -17,101 +17,101 @@
 		{ name: "หอมเจียว", isActive: false, path: "" },
 	]
 
-	let menuChickens: {
-		id: number
-		name: string
-		quantity: number
-		img: string
-		type: number
-		price: number
-	}[] = [
-		{
-			id: 1,
-			name: "น่องติดสะโพก",
-			quantity: 0,
-			img: "",
-			type: 2,
-			price: 35,
-		},
-		{ id: 2, name: "อกไก่", quantity: 0, img: "", type: 2, price: 35 },
-		{ id: 3, name: "ปีกไก่ทอด", quantity: 0, img: "", type: 2, price: 15 },
-		{
-			id: 4,
-			name: "หมูสามชั้นทอด",
-			quantity: 0,
-			img: "",
-			type: 2,
-			price: 40,
-		},
-		{ id: 5, name: "โครงไก่ทอด", quantity: 0, img: "", type: 2, price: 45 },
-		{ id: 6, name: "ปลายปีก", quantity: 0, img: "", type: 2, price: 20 },
-		{ id: 7, name: "น่องไก่", quantity: 0, img: "", type: 2, price: 20 },
-		{ id: 8, name: "หอมเจียว", quantity: 0, img: "", type: 4, price: 10 },
-		{ id: 9, name: "หนังติดมัน", quantity: 0, img: "", type: 2, price: 20 },
-		{
-			id: 10,
-			name: "ข้าวเหนียวดำ",
-			quantity: 0,
-			img: "",
-			type: 3,
-			price: 10,
-		},
-		{
-			id: 11,
-			name: "ข้าวเหนียวขาว",
-			quantity: 0,
-			img: "",
-			type: 3,
-			price: 10,
-		},
-		{
-			id: 12,
-			name: "ไก่ทั้งตัว",
-			quantity: 0,
-			img: "",
-			type: 2,
-			price: 200,
-		},
-		{
-			id: 13,
-			name: "หอมเจียวใหญ่",
-			quantity: 0,
-			img: "",
-			type: 4,
-			price: 20,
-		},
-		{
-			id: 14,
-			name: "ชุดสุดคุ้ม",
-			quantity: 0,
-			img: "",
-			type: 1,
-			price: 150,
-		},
-		{
-			id: 15,
-			name: "ชุดจุใจใช่เลย",
-			quantity: 0,
-			img: "",
-			type: 1,
-			price: 165,
-		},
-		{
-			id: 16,
-			name: "ชุดครอบครัวสุขสันต์",
-			quantity: 0,
-			img: "",
-			type: 1,
-			price: 125,
-		},
-	]
+	// let menuChickens: {
+	// 	id: number
+	// 	name: string
+	// 	quantity: number
+	// 	img: string
+	// 	type: number
+	// 	price: number
+	// }[] = [
+	// 	{
+	// 		id: 1,
+	// 		name: "น่องติดสะโพก",
+	// 		quantity: 0,
+	// 		img: "",
+	// 		type: 2,
+	// 		price: 35,
+	// 	},
+	// 	{ id: 2, name: "อกไก่", quantity: 0, img: "", type: 2, price: 35 },
+	// 	{ id: 3, name: "ปีกไก่ทอด", quantity: 0, img: "", type: 2, price: 15 },
+	// 	{
+	// 		id: 4,
+	// 		name: "หมูสามชั้นทอด",
+	// 		quantity: 0,
+	// 		img: "",
+	// 		type: 2,
+	// 		price: 40,
+	// 	},
+	// 	{ id: 5, name: "โครงไก่ทอด", quantity: 0, img: "", type: 2, price: 45 },
+	// 	{ id: 6, name: "ปลายปีก", quantity: 0, img: "", type: 2, price: 20 },
+	// 	{ id: 7, name: "น่องไก่", quantity: 0, img: "", type: 2, price: 20 },
+	// 	{ id: 8, name: "หอมเจียว", quantity: 0, img: "", type: 4, price: 10 },
+	// 	{ id: 9, name: "หนังติดมัน", quantity: 0, img: "", type: 2, price: 20 },
+	// 	{
+	// 		id: 10,
+	// 		name: "ข้าวเหนียวดำ",
+	// 		quantity: 0,
+	// 		img: "",
+	// 		type: 3,
+	// 		price: 10,
+	// 	},
+	// 	{
+	// 		id: 11,
+	// 		name: "ข้าวเหนียวขาว",
+	// 		quantity: 0,
+	// 		img: "",
+	// 		type: 3,
+	// 		price: 10,
+	// 	},
+	// 	{
+	// 		id: 12,
+	// 		name: "ไก่ทั้งตัว",
+	// 		quantity: 0,
+	// 		img: "",
+	// 		type: 2,
+	// 		price: 200,
+	// 	},
+	// 	{
+	// 		id: 13,
+	// 		name: "หอมเจียวใหญ่",
+	// 		quantity: 0,
+	// 		img: "",
+	// 		type: 4,
+	// 		price: 20,
+	// 	},
+	// 	{
+	// 		id: 14,
+	// 		name: "ชุดสุดคุ้ม",
+	// 		quantity: 0,
+	// 		img: "",
+	// 		type: 1,
+	// 		price: 150,
+	// 	},
+	// 	{
+	// 		id: 15,
+	// 		name: "ชุดจุใจใช่เลย",
+	// 		quantity: 0,
+	// 		img: "",
+	// 		type: 1,
+	// 		price: 165,
+	// 	},
+	// 	{
+	// 		id: 16,
+	// 		name: "ชุดครอบครัวสุขสันต์",
+	// 		quantity: 0,
+	// 		img: "",
+	// 		type: 1,
+	// 		price: 125,
+	// 	},
+	// ]
 
 	let TotalCost: number
 
 	function calcost(id: number) {
-		menuChickens.forEach((item) => {
+		menuPos.forEach((item) => {
 			if (id === item.id) {
-				TotalCost += item.price
+				TotalCost += item.stockunitPrice
 			}
 		})
 		TotalCost = TotalCost
@@ -131,13 +131,13 @@
 	}
 
 	function plusOrder(menuId: number) {
-		menuChickens.forEach((item) => {
+		menuPos.forEach((item) => {
 			if (menuId === item.id) {
-				item.quantity = item.quantity + 1
+				item.quantity = (item.quantity ?? 0) + 1
 				calcost(item.id)
 			}
 		})
-		menuChickens = menuChickens
+		menuPos = menuPos
 	}
 
 	onMount(async () => {
@@ -147,11 +147,10 @@
 			getStock()
 		}, 1000)
 	})
-	let menuPos: GetModel = {}
+	let menuPos: Array<GetModel> = []
 	async function getStock(): Promise<void> {
 		try {
 			menuPos = await get("/stock")
-			console.log(menuPos)
 		} catch (error) {
 			console.error(error)
 		}
@@ -166,6 +165,7 @@
 	// 		console.error(error)
 	// 	}
 	// }
+
 </script>
 
 {#if loading}
@@ -184,15 +184,15 @@
 		<div id="nongkaiBox">
 			<div id="nongKai">
 				{#if typeMenu !== 0}
-					{#each menuChickens.filter((a) => a.type === typeMenu) as menuChicken}
+					{#each menuPos.filter((a) => a.typeMenu === typeMenu) as menuChicken}
 						<div
 							class="card-menu"
 							on:click={() => plusOrder(menuChicken.id)}
 						>
-							<img class="chicken-img" {src} alt="" />
+							<img class="chicken-img" src={menuChicken.pathUrl} alt="" />
 							<div class="card-footer">
 								<div class="chicken-text">
-									{menuChicken.name}
+									{menuChicken.stockName}
 								</div>
 								<div
 									class={`nothing ${
@@ -201,21 +201,21 @@
 											: ""
 									}`}
 								>
-									{menuChicken.quantity}
+									{menuChicken.quantity ?? 0} 
 								</div>
 							</div>
 						</div>
 					{/each}
 				{:else}
-					{#each menuChickens as menuChicken}
+					{#each menuPos as menuChicken}
 						<div
 							class="card-menu"
 							on:click={() => plusOrder(menuChicken.id)}
 						>
-							<img class="chicken-img" {src} alt="" />
+							<img class="chicken-img" src={menuChicken.pathUrl} alt="" />
 							<div class="card-footer">
 								<div class="chicken-text">
-									{menuChicken.name}
+									{menuChicken.stockName}
 								</div>
 								<div
 									class={`nothing ${
@@ -224,7 +224,7 @@
 											: ""
 									}`}
 								>
-									{menuChicken.quantity}
+									{menuChicken.quantity ?? 0}
 								</div>
 							</div>
 						</div>
@@ -232,7 +232,8 @@
 				{/if}
 			</div>
 		</div>
-		<SelectedOrder bind:menuChickens bind:TotalCost />
+		<SelectedOrder bind:menuPos bind:TotalCost />
+		<!-- <SelectedOrder bind:TotalCost /> -->
 	</div>
 {/if}
 

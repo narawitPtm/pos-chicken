@@ -1,8 +1,6 @@
 <script lang="ts">
   import Calculate from '../calculate/calculate.svelte'
-  let orderlistsPrepare: { name: string; quantity: number; cost: number }[] = [
-    { name: "อกไก่", quantity: 1, cost: 45 },
-  ]
+  import type GetModel from "../../Model/GetModel"
 
   let modalShow:boolean = false
 
@@ -11,56 +9,42 @@
     name: string;
   }
 
-  type menuLists = {
-    id: number;
-    menu: string;
-    orders: order[];
-  }
-
-  export let menuChickens: {
-    id: number;
-    name: string;
-    quantity: number;
-    img: string;
-    type: number;
-    price: number;
-  }[]
+  export let menuPos: GetModel[];
 
   export let TotalCost: number =  0
 
 
   function minusOrder(id:number) {
-    menuChickens.forEach((item) => {
+    menuPos.forEach((item) => {
       if (item.id === id) {
         item.quantity = item.quantity - 1
-        TotalCost -= item.price
+        TotalCost -= item.stockunitPrice
       }
     })
-    menuChickens = menuChickens
+    menuPos = menuPos
     TotalCost = TotalCost
-    
   }
 
   function deleteOrder(id:number) {
-    menuChickens.forEach((item) => {
+    menuPos.forEach((item) => {
       if (item.id === id) {
-        TotalCost -= item.price * item.quantity
+        TotalCost -= item.stockunitPrice * item.quantity
         item.quantity = 0
       }
     })
-    menuChickens = menuChickens
+    menuPos = menuPos
     TotalCost = TotalCost
     
   }
 
   function plusOrder(id:number) {
-    menuChickens.forEach((item) => {
+    menuPos.forEach((item) => {
       if (item.id === id) {
         item.quantity = item.quantity + 1
-        TotalCost += item.price
+        TotalCost += item.stockunitPrice
       }
     })
-    menuChickens = menuChickens
+    menuPos = menuPos
     TotalCost = TotalCost
   }
 
@@ -89,17 +73,17 @@
   <div id="headerOrder">รายการสั่งซื้อ</div>
   <div id="menuListPrepare">
     <!-- loop-order -->
-    {#each menuChickens as orderlistPrepare}
+    {#each menuPos as orderlistPrepare}
       {#if orderlistPrepare.quantity > 0}
         <div class="menuPrepare">
           <div class="menuPrepareLeft">
             <i class="fas fa-times delete" on:click={() => deleteOrder(orderlistPrepare.id)}/>
             <div class="menu-detail">
               <div class="name-menu">
-                {orderlistPrepare.name}
+                {orderlistPrepare.stockName}
               </div>
               <div class="cost-menu">
-                ฿ {orderlistPrepare.price * orderlistPrepare.quantity}
+                ฿ {orderlistPrepare.stockunitPrice * orderlistPrepare.quantity}
               </div>
             </div>
           </div>
