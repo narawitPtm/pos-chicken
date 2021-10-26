@@ -4,12 +4,7 @@
 
   let modalShow:boolean = false
 
-  type order = {
-    id: number;
-    name: string;
-  }
-
-  export let menuPos: GetModel[];
+  export let menuPos: Array<GetModel>;
 
   export let TotalCost: number =  0
 
