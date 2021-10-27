@@ -16,13 +16,9 @@
 
     let loading: boolean = true;
     onMount(async () => {
-        await getOrders();
-        loading = false
-        // setTimeout(() => {
-        //     console.log("delayed!");
-        //     loading = false;
-        //     getOrders();
-        // }, 1000);
+        setTimeout(() => {
+            loading = false;
+        }, 1000);
     });
 
     let orderList: Array<GetOrder> = []

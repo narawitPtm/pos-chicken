@@ -7,23 +7,23 @@
   let loading: boolean = true;
 
   onMount(async () => {
-    setTimeout(() => {
-      console.log("delayed!");
-      loading = false;
-    }, 1000);
-
-     getStock();
+    getStock();
   });
 
   let responseStock: Array<GetStock> = [];
 
   async function getStock(): Promise<void> {
     try {
+      loading = true
       const res: Array<GetStock> = await get("/stock");
       responseStock = res;
-      console.log(responseStock)
     } catch (error) {
       console.error(error)
+    }
+    finally {
+      setTimeout(() => {
+      loading = false;
+    }, 1000);
     }
   }
 
@@ -31,7 +31,7 @@
 
 {#if loading}
   <Loading />
-{:else}
+{/if}
   <div id="table" class="table-box">
     <div id="header"><p class="header-text">สินค้าคงคลัง</p></div>
     <div class="custom-table">
@@ -104,7 +104,7 @@
       </table>
     </div>
   </div>
-{/if}
+
 
 <style lang="scss">
   @import "./stock.scss";
