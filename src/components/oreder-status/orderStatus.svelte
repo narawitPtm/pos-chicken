@@ -2,250 +2,65 @@
     import Select from "svelte-select";
     import { onMount } from "svelte";
     import Loading from "../loading/loading.svelte";
-
-    type menuList = {
-        name: string;
-        quantity: number;
-    };
-
-    type statusList = {
-        id: number;
-        name: string;
-    };
-
-    type orderList = {
-        no: number;
-        menuList: menuList[];
-        status: number;
-    };
-
-    let orders: orderList[] = [
-        {
-            no: 1,
-            menuList: [
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-            ],
-            status: 2,
-        },
-        {
-            no: 2,
-            menuList: [
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-            ],
-            status: 2,
-        },
-        {
-            no: 3,
-            menuList: [
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-            ],
-            status: 2,
-        },
-        {
-            no: 4,
-            menuList: [
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-            ],
-            status: 1,
-        },
-        {
-            no: 5,
-            menuList: [
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-            ],
-            status: 1,
-        },
-        {
-            no: 6,
-            menuList: [
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-            ],
-            status: 1,
-        },
-        {
-            no: 7,
-            menuList: [
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-                {
-                    name: "ไก่ทอด",
-                    quantity: 5,
-                },
-            ],
-            status: 3,
-        },
-    ];
+    import type GetOrder from "../../Model/GetOrder";
+    import { get, patch } from "../store/apipos";
+    import type patchStateRequest from "../../Model/PatchRequest";
+    import type SelectModel from "../../Model/SelectModel";
 
     let selectedId;
-    let statusLabal = [
-        { id: 1, text: "รอ" },
-        { id: 2, text: "กำลังทำ" },
-        { id: 3, text: "ทำเสร็จแล้ว" },
+    let statusLabal: Array<SelectModel> = [
+        { id: 1, text: 'รออาหาร' },
+        { id: 2, text: "รอลูกค้า" },
+        { id: 3, text: "ส่งสำเร็จ" },
     ];
 
     let loading: boolean = true;
     onMount(async () => {
-        setTimeout(() => {
-            console.log("delayed!");
-            loading = false;
-        }, 1000);
+        await getOrders();
+        loading = false
+        // setTimeout(() => {
+        //     console.log("delayed!");
+        //     loading = false;
+        //     getOrders();
+        // }, 1000);
     });
+
+    let orderList: Array<GetOrder> = []
+	async function getOrders(): Promise<void> {
+		try {
+			const response: Array<GetOrder> = await get("/order")
+             orderList = response
+             let newOrder: Array<GetOrder> = [...orderList]
+            newOrder.forEach(item => item.selectState = {id: 0, text: ''})
+            newOrder.forEach((item: GetOrder) => {
+                 console.log('ok')
+                //  item.selectState.id = item.state.id
+                item.selectState = [...statusLabal].filter(x => x.id === item.state.id)[0]
+                //  item.selectState.text = item.state.stateOrder
+                 console.log('okokok')
+             })
+             orderList = newOrder
+             console.log(orderList[0].selectState === statusLabal[0])
+            console.log(orderList)
+		} catch (error) {
+			console.error(error)
+		}
+	}
+    
+    let patchState: Array<patchStateRequest> = []
+    async function patchOrder(index: number): Promise<void> {
+		try {
+            const request: patchStateRequest = {
+                queueOrder: orderList[index].queue,
+                stateId: orderList[index].selectState.id
+            }
+			patchState = await patch("/Order/state", request)
+            console.log(orderList)
+		} catch (error) {
+			console.error(error)
+		}
+	}
+
 </script>
 
 {#if loading}
@@ -256,45 +71,33 @@
             <p class="topic-text">ออเดอร์ที่เปิดอยู่</p>
         </div>
         <div id="order">
-            {#each orders as order, index}
+            {#each orderList as order, index}
                 <div class="order-card">
                     <div class="details">
-                        <div class="no-text"># {order.no}</div>
+                        <div class="no-text"># {order.queue}</div>
                         <div class="menu-scrollbar">
-                            {#each order.menuList as menu}
+                            {#each order.products as menu}
                                 <div class="menu-item">
-                                    <p class="menu">{menu.name}</p>
+                                    <p class="menu">{menu.stockName}</p>
                                     <p class="price">{menu.quantity}</p>
                                 </div>
                             {/each}
                         </div>
                     </div>
                     <div class="bottom">
+                        <!-- on:change={() => {patchOrder(order.queue, selectedId)}} -->
+                        <!-- filter(item => item.id === order.state.id -->
                         <select
+                            bind:value={orderList[index].selectState}
                             name="status"
                             id="status"
-                            class={`status-select ${
-                                order.status === 1
-                                    ? "yellow"
-                                    : order.status === 2
-                                    ? "red"
-                                    : order.status === 3
-                                    ? "green"
-                                    : ""
-                            }`}
+                            on:change={() => patchOrder(index)}
+                            class={`status-select ${order.state.id === 1 ? "yellow" : order.state.id === 2 ? "red" : order.state.id === 3 ? "green" : "" }`}
                         >
                             {#each statusLabal as id}
                                 <option
-                                    selected={id.id === order.status}
-                                    class={`option ${
-                                        id.id === 1
-                                            ? "yellow"
-                                            : id.id === 2
-                                            ? "red"
-                                            : id.id === 3
-                                            ? "green"
-                                            : ""
-                                    }`}
+                                    selected={id.id === order.state.id}
+                                    class={`option ${id.id === 1 ? "yellow" : id.id === 2 ? "red" : id.id === 3 ? "green" : "" }`}
                                     value={id}
                                 >
                                     {id.text}

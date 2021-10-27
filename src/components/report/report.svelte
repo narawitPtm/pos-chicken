@@ -155,12 +155,6 @@
         --indicatorColor: #c5cacf;
         --indicatorFill: currentcolor;
         --indicatorStroke: currentcolor;
-        --spinnerRight: 10px;
-        --spinnerLeft: 11px;
-        --spinnerWidth: 20px;
-        --spinnerHeight: 20px;
-        --spinnerColor: #51ce6c;
-        --spinnerAnimation: rotate 0.75s linear infinite;
         --multiSelectPadding: 0 35px 0 16px;
         --multiSelectInputPadding: 0;
         --multiSelectInputMargin: 0;
@@ -170,10 +164,6 @@
         --listMaxHeight: 250px;
         --listBackground: #fff;
         --virtualListHeight: 200px;
-        --groupTitleColor: #8f8f8f;
-        --groupTitleFontSize: 12px;
-        --groupTitlePadding: 0 20px;
-        --groupTitleTextTransform: uppercase;
         --listEmptyTextAlign: center;
         --listEmptyPadding: 20px 0;
         --listEmptyColor: #78848f;
@@ -183,25 +173,5 @@
         --itemIsActiveColor: #fff;
         --itemFirstBorderRadius: 4px 4px 0 0;
         --itemHoverBG: #e7f2ff;
-        --multiItemBG: #ebedef;
-        --multiItemMargin: 5px 5px 0 0;
-        --multiItemBorderRadius: 16px;
-        --multiItemHeight: 32px;
-        --multiItemPadding: 0 10px 0 15px;
-        --multiLabelMargin: 0 5px 0 0;
-        --multiItemActiveBG: #006fff;
-        --multiItemActiveColor: #fff;
-        --multiItemDisabledHoverBg: #ebedef;
-        --multiItemDisabledHoverColor: #c1c6cc;
-        --multiClearRadius: 50%;
-        --multiClearBG: 50%;
-        --multiClearWidth: #52616f;
-        --multiClearHeight: 16px;
-        --multiClearTop: 8px;
-        --multiClearTextAlign: center;
-        --multiClearPadding: 1px;
-        --multiClearHoverBG: #fff;
-        --multiClearHoverFill: #006fff;
-        --multiClearFill: #ebedef;
     }
 </style>
