@@ -3,7 +3,7 @@
     import { onMount } from "svelte";
     import Loading from "../loading/loading.svelte";
     import type GetOrder from "../../Model/GetOrder";
-    import { get, patch } from "../store/apipos";
+    import { get, post } from "../store/apipos";
     import type patchStateRequest from "../../Model/PatchRequest";
     import type SelectModel from "../../Model/SelectModel";
 
@@ -18,6 +18,7 @@
     onMount(async () => {
         setTimeout(() => {
             loading = false;
+            getOrders()
         }, 1000);
     });
 
@@ -50,7 +51,8 @@
                 queueOrder: orderList[index].queue,
                 stateId: orderList[index].selectState.id
             }
-			patchState = await patch("/Order/state", request)
+			patchState = await post("/Order/state", request)
+            location.reload();
             console.log(orderList)
 		} catch (error) {
 			console.error(error)
